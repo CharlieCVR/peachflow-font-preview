@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shop All, Peach & Flow</title>
+<title>Our Story, Peach & Flow</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -272,7 +272,7 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
   <div class="wrap nav">
     <a href="index.html" aria-label="Peach & Flow home" style="display:flex;align-items:center"><svg class="logo-mark" style="height:48px;width:92px;color:var(--terra)"><use href="#pf-logo"/></svg></a>
     <nav class="nav-links">
-      <a href="shop.html" class="active">Shop All</a>
+      <a href="shop.html">Shop All</a>
       <a href="bundle.html">Bundle Builder</a>
     </nav>
     <div class="nav-actions">
@@ -283,89 +283,42 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
   </div>
 </header>
 
-<section class="shop-head">
-  <div class="wrap">
-    <span class="eyebrow">The Collection</span>
-    <h1>Shop All</h1>
-    <p>Cute grip socks for every flow, find the pair that's you. One price, eight designs, serious grip.</p>
+<section class="section" style="padding-bottom:40px">
+  <div class="wrap" style="text-align:center;max-width:800px;margin:0 auto">
+    <span class="eyebrow">Our Story</span>
+    <h1 style="font-size:clamp(2.5rem,5.5vw,4.3rem);font-weight:800;letter-spacing:-.035em;line-height:1.0;margin:16px 0 22px">Made for the mat, loved off it.</h1>
+    <p style="font-size:1.18rem;color:var(--muted);line-height:1.6;max-width:620px;margin:0 auto">Peach &amp; Flow started with a simple frustration &mdash; grip socks that were either boring, or fell apart after two washes. So we made our own: genuinely grippy, properly comfy, and impossibly cute.</p>
+    
   </div>
 </section>
 
-<div class="wrap">
-  <div class="shop-bar">
-    <span class="count" id="count">8 products</span>
-    <div class="filters">
-      <button class="chip active" data-filter="all">All</button>
-      <button class="chip" data-filter="in">In stock</button>
-      <button class="chip" data-filter="out">Sold out</button>
-      <button class="chip" data-filter="best">Bestsellers</button>
-    </div>
-    <div class="sortwrap"><label for="sort">Sort</label>
-      <select id="sort"><option>Featured</option><option>Bestselling</option><option>Price: low to high</option><option>Price: high to low</option><option>Newest</option></select>
-    </div>
+<section class="story">
+  <div class="story-img"><div class="frame"><img src="assets/ambient-studio-web.jpg" alt="Peach &amp; Flow Pilates studio" /></div></div>
+  <div class="story-copy">
+    <span class="eyebrow">How it started</span>
+    <h2>From one frustrating pair to a studio staple.</h2>
+    <p>Our founder spent more on grip socks than she&rsquo;d like to admit &mdash; and still ended up sliding mid-flow, or pulling on a pair gone bobbly and grey after a couple of washes. There had to be a better pair. There wasn&rsquo;t. So we made it.</p>
+    <p>We obsessed over the details: full-coverage hex grip that actually holds, a premium cotton blend that stays soft, an arch-hugging cuff that won&rsquo;t roll, and designs cute enough to wear long after class.</p>
   </div>
-  <div class="shop-grid">
-    <div class="grid">
+</section>
 
-      <div class="card" onclick="location.href='product.html'" data-status="in" data-best="1">
-        <div class="card-img"><span class="badge terra">Bestseller</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images3.jpg?v=1776886148" alt="Less Drama More Matcha" /></div>
-          <div class="quick">+ Add to bag</div></div>
-        <div class="card-body"><h3>Less Drama More Matcha</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.9</span></div></div>
-      </div>
-
-      <div class="card" onclick="location.href='product.html'" data-status="in">
-        <div class="card-img"><span class="badge">In stock</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images1_0f90c808-0095-458e-8839-7379ba292f5b.jpg?v=1776886147" alt="Eggs" /></div>
-          <div class="quick">+ Add to bag</div></div>
-        <div class="card-body"><h3>Eggs</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.9</span></div></div>
-      </div>
-
-      <div class="card" onclick="location.href='product.html'" data-status="in">
-        <div class="card-img"><span class="badge">Low stock</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images8.jpg?v=1776886149" alt="Watermelons" /></div>
-          <div class="quick">+ Add to bag</div></div>
-        <div class="card-body"><h3>Watermelons</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.8</span></div></div>
-      </div>
-
-      <div class="card" onclick="location.href='product.html'" data-status="out">
-        <div class="card-img"><span class="badge out">Sold out</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images4.jpg?v=1776886147" alt="Peaches" /></div>
-          <div class="quick">Notify me</div></div>
-        <div class="card-body"><h3>Peaches</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 5.0</span></div></div>
-      </div>
-
-      <div class="card" onclick="location.href='product.html'" data-status="out">
-        <div class="card-img"><span class="badge out">Sold out</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images5.jpg?v=1776886147" alt="Flowers" /></div>
-          <div class="quick">Notify me</div></div>
-        <div class="card-body"><h3>Flowers</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.9</span></div></div>
-      </div>
-
-      <div class="card" onclick="location.href='product.html'" data-status="out">
-        <div class="card-img"><span class="badge out">Sold out</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images7.jpg?v=1776886147" alt="Chilis" /></div>
-          <div class="quick">Notify me</div></div>
-        <div class="card-body"><h3>Chilis</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.8</span></div></div>
-      </div>
-
-      <div class="card" onclick="location.href='product.html'" data-status="out">
-        <div class="card-img"><span class="badge out">Sold out</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images6.jpg?v=1776886147" alt="You're a Hottie" /></div>
-          <div class="quick">Notify me</div></div>
-        <div class="card-body"><h3>You’re a Hottie</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.9</span></div></div>
-      </div>
-
-      <div class="card" onclick="location.href='product.html'" data-status="out">
-        <div class="card-img"><span class="badge out">Sold out</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images2.jpg?v=1776886147" alt="Smiley Faces" /></div>
-          <div class="quick">Notify me</div></div>
-        <div class="card-body"><h3>Smiley Faces</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 5.0</span></div></div>
-      </div>
-
-    </div>
-  </div>
+<section class="section">
+  <div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">What we stand for</span><h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.03em;margin-top:10px">The little things, done properly.</h2></div></div>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
+<div style="background:var(--cream-soft);border:1.5px solid var(--line);border-radius:20px;padding:32px"><h3 style="font-size:1.28rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px">Genuinely grippy</h3><p style="color:var(--muted);line-height:1.55">Full-coverage hex grip that keeps you planted through every plank, lunge and down-dog &mdash; wash after wash.</p></div>
+<div style="background:var(--cream-soft);border:1.5px solid var(--line);border-radius:20px;padding:32px"><h3 style="font-size:1.28rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px">Properly comfy</h3><p style="color:var(--muted);line-height:1.55">An 85% cotton cushion sole and an arch-supported, anti-roll cuff that feels good from first class to last.</p></div>
+<div style="background:var(--cream-soft);border:1.5px solid var(--line);border-radius:20px;padding:32px"><h3 style="font-size:1.28rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px">Impossibly cute</h3><p style="color:var(--muted);line-height:1.55">Designs you&rsquo;ll actually want to wear off the mat too &mdash; from matcha to watermelons to smiley faces.</p></div>
 </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;text-align:center">
+  <div class="wrap">
+    <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.03em;margin-bottom:24px">Find your pair.</h2>
+    <a class="btn" href="shop.html">Shop the collection</a>
+  </div>
+</section>
 
 <footer>
   <div class="wrap foot">

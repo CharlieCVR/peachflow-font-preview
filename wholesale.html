@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shop All, Peach & Flow</title>
+<title>Wholesale, Peach & Flow</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -272,7 +272,7 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
   <div class="wrap nav">
     <a href="index.html" aria-label="Peach & Flow home" style="display:flex;align-items:center"><svg class="logo-mark" style="height:48px;width:92px;color:var(--terra)"><use href="#pf-logo"/></svg></a>
     <nav class="nav-links">
-      <a href="shop.html" class="active">Shop All</a>
+      <a href="shop.html">Shop All</a>
       <a href="bundle.html">Bundle Builder</a>
     </nav>
     <div class="nav-actions">
@@ -283,89 +283,51 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
   </div>
 </header>
 
-<section class="shop-head">
-  <div class="wrap">
-    <span class="eyebrow">The Collection</span>
-    <h1>Shop All</h1>
-    <p>Cute grip socks for every flow, find the pair that's you. One price, eight designs, serious grip.</p>
+<section class="section" style="padding-bottom:40px">
+  <div class="wrap" style="text-align:center;max-width:800px;margin:0 auto">
+    <span class="eyebrow">Wholesale</span>
+    <h1 style="font-size:clamp(2.5rem,5.5vw,4.3rem);font-weight:800;letter-spacing:-.035em;line-height:1.0;margin:16px 0 22px">Stock Peach &amp; Flow in your studio.</h1>
+    <p style="font-size:1.18rem;color:var(--muted);line-height:1.6;max-width:620px;margin:0 auto">Loved by Pilates, barre and yoga studios across the UK &mdash; cute, durable grip socks your clients will actually want to take home, with healthy margins for you.</p>
+    <a class="btn" href="#enquire" style="margin-top:30px">Become a stockist</a>
   </div>
 </section>
 
-<div class="wrap">
-  <div class="shop-bar">
-    <span class="count" id="count">8 products</span>
-    <div class="filters">
-      <button class="chip active" data-filter="all">All</button>
-      <button class="chip" data-filter="in">In stock</button>
-      <button class="chip" data-filter="out">Sold out</button>
-      <button class="chip" data-filter="best">Bestsellers</button>
-    </div>
-    <div class="sortwrap"><label for="sort">Sort</label>
-      <select id="sort"><option>Featured</option><option>Bestselling</option><option>Price: low to high</option><option>Price: high to low</option><option>Newest</option></select>
-    </div>
-  </div>
-  <div class="shop-grid">
-    <div class="grid">
-
-      <div class="card" onclick="location.href='product.html'" data-status="in" data-best="1">
-        <div class="card-img"><span class="badge terra">Bestseller</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images3.jpg?v=1776886148" alt="Less Drama More Matcha" /></div>
-          <div class="quick">+ Add to bag</div></div>
-        <div class="card-body"><h3>Less Drama More Matcha</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.9</span></div></div>
-      </div>
-
-      <div class="card" onclick="location.href='product.html'" data-status="in">
-        <div class="card-img"><span class="badge">In stock</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images1_0f90c808-0095-458e-8839-7379ba292f5b.jpg?v=1776886147" alt="Eggs" /></div>
-          <div class="quick">+ Add to bag</div></div>
-        <div class="card-body"><h3>Eggs</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.9</span></div></div>
-      </div>
-
-      <div class="card" onclick="location.href='product.html'" data-status="in">
-        <div class="card-img"><span class="badge">Low stock</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images8.jpg?v=1776886149" alt="Watermelons" /></div>
-          <div class="quick">+ Add to bag</div></div>
-        <div class="card-body"><h3>Watermelons</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.8</span></div></div>
-      </div>
-
-      <div class="card" onclick="location.href='product.html'" data-status="out">
-        <div class="card-img"><span class="badge out">Sold out</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images4.jpg?v=1776886147" alt="Peaches" /></div>
-          <div class="quick">Notify me</div></div>
-        <div class="card-body"><h3>Peaches</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 5.0</span></div></div>
-      </div>
-
-      <div class="card" onclick="location.href='product.html'" data-status="out">
-        <div class="card-img"><span class="badge out">Sold out</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images5.jpg?v=1776886147" alt="Flowers" /></div>
-          <div class="quick">Notify me</div></div>
-        <div class="card-body"><h3>Flowers</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.9</span></div></div>
-      </div>
-
-      <div class="card" onclick="location.href='product.html'" data-status="out">
-        <div class="card-img"><span class="badge out">Sold out</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images7.jpg?v=1776886147" alt="Chilis" /></div>
-          <div class="quick">Notify me</div></div>
-        <div class="card-body"><h3>Chilis</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.8</span></div></div>
-      </div>
-
-      <div class="card" onclick="location.href='product.html'" data-status="out">
-        <div class="card-img"><span class="badge out">Sold out</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images6.jpg?v=1776886147" alt="You're a Hottie" /></div>
-          <div class="quick">Notify me</div></div>
-        <div class="card-body"><h3>You’re a Hottie</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.9</span></div></div>
-      </div>
-
-      <div class="card" onclick="location.href='product.html'" data-status="out">
-        <div class="card-img"><span class="badge out">Sold out</span>
-          <div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images2.jpg?v=1776886147" alt="Smiley Faces" /></div>
-          <div class="quick">Notify me</div></div>
-        <div class="card-body"><h3>Smiley Faces</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 5.0</span></div></div>
-      </div>
-
-    </div>
-  </div>
+<section class="section">
+  <div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">Why stock us</span><h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.03em;margin-top:10px">Socks that sell themselves.</h2></div></div>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
+<div style="background:var(--cream-soft);border:1.5px solid var(--line);border-radius:20px;padding:32px"><h3 style="font-size:1.28rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px">Healthy margins</h3><p style="color:var(--muted);line-height:1.55">Strong wholesale pricing with a low minimum order, so it&rsquo;s easy to start and easy to reorder.</p></div>
+<div style="background:var(--cream-soft);border:1.5px solid var(--line);border-radius:20px;padding:32px"><h3 style="font-size:1.28rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px">Proven sellers</h3><p style="color:var(--muted);line-height:1.55">4.9/5 from 2,000+ reviews. The designs do the talking and the grip keeps them coming back.</p></div>
+<div style="background:var(--cream-soft);border:1.5px solid var(--line);border-radius:20px;padding:32px"><h3 style="font-size:1.28rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px">Fast UK dispatch</h3><p style="color:var(--muted);line-height:1.55">Designed and shipped from the UK, with restocks turned around in days, not weeks.</p></div>
 </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">How it works</span><h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.03em;margin-top:10px">Three steps to stocked.</h2></div></div>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
+<div style="background:var(--cream-soft);border:1.5px solid var(--line);border-radius:20px;padding:32px"><div style="width:38px;height:38px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-items:center;font-weight:800;margin-bottom:16px">1</div><h3 style="font-size:1.28rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px">Apply</h3><p style="color:var(--muted);line-height:1.55">Fill in the short form below and tell us about your studio or store.</p></div>
+<div style="background:var(--cream-soft);border:1.5px solid var(--line);border-radius:20px;padding:32px"><div style="width:38px;height:38px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-items:center;font-weight:800;margin-bottom:16px">2</div><h3 style="font-size:1.28rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px">Get your pack</h3><p style="color:var(--muted);line-height:1.55">We&rsquo;ll send wholesale pricing, minimums and a full line sheet.</p></div>
+<div style="background:var(--cream-soft);border:1.5px solid var(--line);border-radius:20px;padding:32px"><div style="width:38px;height:38px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-items:center;font-weight:800;margin-bottom:16px">3</div><h3 style="font-size:1.28rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px">Order &amp; restock</h3><p style="color:var(--muted);line-height:1.55">Place your first order and top up anytime &mdash; restocks ship fast.</p></div>
+</div>
+  </div>
+</section>
+
+<section class="section" id="enquire" style="padding-top:0">
+  <div class="wrap" style="max-width:680px;margin:0 auto;background:var(--cream-soft);border:1.5px solid var(--line);border-radius:28px;padding:clamp(28px,5vw,56px)">
+    <div style="text-align:center;margin-bottom:28px"><span class="eyebrow">Become a stockist</span>
+    <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-.03em;margin-top:10px">Let&rsquo;s get you stocked.</h2>
+    <p style="color:var(--muted);margin-top:10px">Tell us about your studio or store and we&rsquo;ll send pricing, minimums and a line sheet within one working day.</p></div>
+    <form onsubmit="return false" style="display:grid;gap:14px">
+      <input type="text" placeholder="Your name" style="border:1.5px solid var(--line);border-radius:100px;padding:15px 22px;font-size:1rem;font-family:inherit;background:#fff" />
+      <input type="email" placeholder="Email address" style="border:1.5px solid var(--line);border-radius:100px;padding:15px 22px;font-size:1rem;font-family:inherit;background:#fff" />
+      <input type="text" placeholder="Studio / store name" style="border:1.5px solid var(--line);border-radius:100px;padding:15px 22px;font-size:1rem;font-family:inherit;background:#fff" />
+      <textarea placeholder="Tell us a little about you" rows="3" style="border:1.5px solid var(--line);border-radius:22px;padding:15px 22px;font-size:1rem;font-family:inherit;background:#fff;resize:vertical"></textarea>
+      <button class="btn" type="submit" style="justify-self:start">Send enquiry</button>
+    </form>
+  </div>
+</section>
 
 <footer>
   <div class="wrap foot">
