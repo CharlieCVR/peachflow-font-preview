@@ -458,7 +458,7 @@ body{overflow-x:hidden}
           <div class="qty-stepper"><button id="qdec" aria-label="Decrease">−</button><span class="qv" id="qv">1</span><button id="qinc" aria-label="Increase">+</button></div>
           <button class="atc" id="atc">Add to bag · £14.99</button>
         </div>
-        <a class="bundle-link" href="bundle.html">Or mix &amp; match a bundle, up to 50% off 10+ pairs →</a>
+        <a class="bundle-link" href="bundle.html">Or mix &amp; match a bundle, up to 45% off 10+ pairs →</a>
         <div class="trust"><span><span class="dot"></span> Free UK shipping over £25</span><span><span class="dot"></span> Ships within 24 hours</span><span><span class="dot"></span> Easy returns</span></div>
 
         <div class="pdp-acc">
@@ -612,13 +612,6 @@ body{overflow-x:hidden}
   </div>
 </section>
 
-<!-- EMAIL CAPTURE -->
-<section class="joinflow">
-  <span class="eyebrow">Join the flow</span>
-  <h2 style="margin-top:8px">First dibs on restocks</h2>
-  <p>New drops, restock alerts and 10% off your first pair, straight to your inbox.</p>
-  <form onsubmit="return false"><input type="email" placeholder="you@email.com" aria-label="Email address"><button class="btn">Sign me up</button></form>
-</section>
 
 <footer>
   <div class="wrap foot">
@@ -660,7 +653,7 @@ body{overflow-x:hidden}
   // qty stepper
   document.getElementById('qdec').addEventListener('click',function(){if(qty>1){qty--;document.getElementById('qv').textContent=qty;render();}});
   document.getElementById('qinc').addEventListener('click',function(){qty++;document.getElementById('qv').textContent=qty;render();});
-  function tierPct(q){var p=0;[[2,15],[4,25],[6,35],[8,45],[10,50]].forEach(function(t){if(q>=t[0])p=t[1];});return p;}
+  function tierPct(q){var p=0;[[2,15],[4,25],[6,35],[8,40],[10,45]].forEach(function(t){if(q>=t[0])p=t[1];});return p;}
   function render(){
     var price=14.99, sub=price*qty, pct=tierPct(qty), tot=sub*(1-pct/100);
     var btn=document.getElementById('atc');

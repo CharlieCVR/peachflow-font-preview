@@ -422,13 +422,6 @@ body{overflow-x:hidden}
   </div>
 </div>
 
-<!-- EMAIL CAPTURE -->
-<section class="joinflow">
-  <span class="eyebrow">Join the flow</span>
-  <h2 style="margin-top:8px">First dibs on restocks</h2>
-  <p>New drops, restock alerts and 10% off your first pair, straight to your inbox.</p>
-  <form onsubmit="return false"><input type="email" placeholder="you@email.com" aria-label="Email address"><button class="btn">Sign me up</button></form>
-</section>
 
 <footer>
   <div class="wrap foot">
@@ -513,7 +506,7 @@ body{overflow-x:hidden}
 <script>
 (function(){
   var qty=0, PRICE=14.99;
-  function tier(q){var p=0;[[2,15],[4,25],[6,35],[8,45],[10,50]].forEach(function(x){if(q>=x[0])p=x[1];});return p;}
+  function tier(q){var p=0;[[2,15],[4,25],[6,35],[8,40],[10,45]].forEach(function(x){if(q>=x[0])p=x[1];});return p;}
   window.pfCartClose=function(){document.getElementById('pfcart').classList.remove('open');};
   window.pfNotifyDone=function(){document.getElementById('cdNotifyOk').style.display='block';};
   function openCart(name,img){
@@ -528,8 +521,8 @@ body{overflow-x:hidden}
     var away=25-tot;
     document.getElementById('cdShip').textContent= away>0 ? ('£'+away.toFixed(2)+' away from free UK shipping') : '✓ Free UK shipping unlocked';
     document.getElementById('cdBar').style.width=Math.min(100,tot/25*100)+'%';
-    var nx=[[2,15],[4,25],[6,35],[8,45],[10,50]].find(function(x){return qty<x[0];});
-    document.getElementById('cdNudge').innerHTML= nx ? ('Add '+(nx[0]-qty)+' more pair'+((nx[0]-qty)>1?'s':'')+' and save <b>'+nx[1]+'%</b> with a bundle.') : 'You have unlocked the <b>best value, 50% off</b>.';
+    var nx=[[2,15],[4,25],[6,35],[8,40],[10,45]].find(function(x){return qty<x[0];});
+    document.getElementById('cdNudge').innerHTML= nx ? ('Add '+(nx[0]-qty)+' more pair'+((nx[0]-qty)>1?'s':'')+' and save <b>'+nx[1]+'%</b> with a bundle.') : 'You have unlocked the <b>best value, 45% off</b>.';
     var bc=document.querySelector('.bag-count'); if(bc) bc.textContent=qty;
     document.getElementById('pfcart').classList.add('open');
   }
