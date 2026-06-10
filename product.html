@@ -17,13 +17,14 @@
 
   :root{
     --terra:#ec9e6d;          /* brand peach */
-    --terra-deep:#d97a45;     /* deeper for CTAs */
+    --terra-deep:#d97a45;
+    --terra-text:#b35a24;     /* deeper for CTAs */
     --cream:#ecd7c2;          /* brand cream */
     --cream-bg:#f7eee4;       /* soft section bg */
     --cream-soft:#fbf6f0;
     --offwhite:#f4eade;       /* warm off-white (replaces solid white) */
     --ink:#2a2017;            /* warm near-black */
-    --muted:#8c7d6e;
+    --muted:#6b5c4c;
     --line:#e7dccd;
     --radius:18px;
   }
@@ -200,7 +201,7 @@
   /* Footer */
   footer{background:var(--ink);color:var(--cream)}
   .foot{padding:72px 0 32px}
-  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
   .foot-grid h4{font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--terra);margin-bottom:18px}
   .foot-grid a{display:block;opacity:.7;margin-bottom:11px;font-size:.94rem;transition:opacity .2s}
   .foot-grid a:hover{opacity:1}
@@ -319,7 +320,7 @@
   .rev-bar{display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--muted)}
   .rev-bar .lab{width:38px}
   .rev-bar .track{flex:1;height:9px;background:var(--cream-bg);border-radius:100px;overflow:hidden}
-  .rev-bar .fill{height:100%;background:var(--terra);border-radius:100px}
+  .rev-bar .fill{display:block;height:100%;background:var(--terra);border-radius:100px}
   .rev-bar .pc{width:38px;text-align:right}
   .rev-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .rev-card{border:1.5px solid var(--line);border-radius:18px;padding:22px;background:var(--offwhite)}
@@ -330,7 +331,7 @@
   .xsell{padding:0 0 90px}
   .xgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
   @media(max-width:900px){
-    .pdp-grid{grid-template-columns:1fr;gap:30px}
+    .pdp-grid{grid-template-columns:minmax(0,1fr);gap:30px}.pdp-grid>*{min-width:0}.buybar{flex-wrap:wrap}.trust{flex-wrap:wrap}
     .gallery{position:static}
     .stats-grid{grid-template-columns:repeat(2,1fr)}
     .rev-top{grid-template-columns:1fr;gap:24px}
@@ -343,6 +344,48 @@ body{font-family:'Neue Montreal','Inter',system-ui,sans-serif}
 h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
 .btn,.news-form input,button,input,select,textarea{font-family:'Neue Montreal','Inter',sans-serif}
 .hero h1{line-height:.95}
+
+/* ===== audit pass: tokens, contrast, mobile nav, payments, email band ===== */
+.eyebrow{color:var(--terra-text)}
+.press-track span{color:var(--ink)}
+.press:hover .press-track{animation-play-state:paused}
+.bag-count{color:var(--ink)}
+.badge.terra{color:var(--ink)}
+.vs-check{background:var(--terra-deep)}
+.foot-grid a{opacity:.85}
+input:focus,textarea:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--terra-deep);outline-offset:2px}
+.paymarks{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.paymarks span{background:rgba(255,255,255,.95);color:#2a2017;border-radius:5px;padding:3px 9px;font-size:.64rem;font-weight:700;letter-spacing:.02em}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;color:var(--ink);padding:6px;align-items:center}
+.menu-btn svg{width:26px;height:26px;display:block}
+.drawer{position:fixed;inset:0;z-index:120;visibility:hidden}
+.drawer.open{visibility:visible}
+.drawer .ov{position:absolute;inset:0;background:rgba(42,32,23,.45);opacity:0;transition:opacity .25s}
+.drawer.open .ov{opacity:1}
+.drawer .panel{position:absolute;top:0;right:0;bottom:0;width:min(84vw,360px);background:var(--offwhite);padding:24px 28px;transform:translateX(100%);transition:transform .28s;display:flex;flex-direction:column;overflow-y:auto}
+.drawer.open .panel{transform:none}
+.drawer .panel a{font-size:1.12rem;font-weight:600;padding:13px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+.drawer .panel .dx{align-self:flex-end;background:none;border:none;font-size:1.7rem;cursor:pointer;color:var(--ink);padding:2px 8px;line-height:1}
+.drawer .dh{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-text);margin:24px 0 2px}
+.joinflow{margin:0 28px 28px;background:var(--cream-bg);border:1.5px solid var(--line);border-radius:28px;padding:48px 24px;text-align:center}
+.joinflow h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-.03em}
+.joinflow p{color:var(--muted);margin:8px 0 22px}
+.joinflow form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.joinflow input{border:1.5px solid var(--line);border-radius:100px;padding:14px 22px;font-size:1rem;font-family:inherit;background:#fff;min-width:min(320px,76vw)}
+@media(max-width:900px){.menu-btn{display:flex}}
+@media(max-width:640px){.foot-grid{grid-template-columns:1fr 1fr;gap:30px}.foot-bottom{flex-direction:column;align-items:flex-start;gap:14px}}
+@media(prefers-reduced-motion:reduce){.press-track,.testi-track,.social-track{animation:none!important}}
+body{overflow-x:hidden}
+.stockline{color:var(--terra-text);font-weight:700;font-size:.88rem;margin:2px 0 10px;display:flex;align-items:center;gap:7px}.stockline::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--terra-deep)}
+@media(max-width:900px){.gal-thumbs{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.gal-thumb{flex:none;scroll-snap-align:start}}
+
+.sticky-atc{position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--offwhite);border-top:1.5px solid var(--line);padding:10px 16px;display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .25s}
+.sticky-atc.show{transform:none}
+.sticky-atc img{width:44px;height:44px;border-radius:10px;object-fit:cover}
+.sticky-atc .si{flex:1;min-width:0}
+.sticky-atc .si b{display:block;font-size:.95rem}
+.sticky-atc .si span{font-size:.82rem;color:var(--muted)}
+.sticky-atc button{background:var(--ink);color:#fff;border:none;border-radius:100px;padding:13px 22px;font-weight:700;font-family:inherit;font-size:.92rem;cursor:pointer;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -373,7 +416,7 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
       <a href="shop.html">Shop All</a>
       <a href="bundle.html">Bundle Builder</a>
     </nav>
-    <div class="nav-actions">
+    <div class="nav-actions"><button class="menu-btn" aria-label="Open menu" onclick="document.getElementById('pfdrawer').classList.add('open')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
       <a href="#">Search</a>
       <a href="#">Account</a>
       <span class="bag">Bag <span class="bag-count">0</span></span>
@@ -390,11 +433,11 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
         <div class="gal-main"><div class="gframe"><img id="galMain" src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images8.jpg?v=1776886149" alt="Watermelons Pilates Grip Socks"></div></div>
         <div class="gal-thumbs">
           <button class="gal-thumb active" data-src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images8.jpg?v=1776886149"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images8.jpg?v=1776886149" alt="Watermelons view 1"></button>
-          <button class="gal-thumb" data-src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley1.jpg?v=1772438587"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley1.jpg?v=1772438587" alt="Watermelons view 2"></button>
-          <button class="gal-thumb" data-src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley5.jpg?v=1772438587"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley5.jpg?v=1772438587" alt="Watermelons view 3"></button>
-          <button class="gal-thumb" data-src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley4.jpg?v=1772438587"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley4.jpg?v=1772438587" alt="Watermelons view 4"></button>
-          <button class="gal-thumb" data-src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley3.jpg?v=1772438587"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley3.jpg?v=1772438587" alt="Watermelons view 5"></button>
-          <button class="gal-thumb" data-src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley2.jpg?v=1772438588"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley2.jpg?v=1772438588" alt="Watermelons view 6"></button>
+          <button class="gal-thumb" data-src="assets/references/watermelons.jpg"><img src="assets/references/watermelons.jpg" alt="Watermelons pair, front and grip sole"></button>
+          <button class="gal-thumb" data-src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley5.jpg?v=1772438587"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley5.jpg?v=1772438587" alt="Grip sole detail infographic"></button>
+          <button class="gal-thumb" data-src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley4.jpg?v=1772438587"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley4.jpg?v=1772438587" alt="Fabric and fit infographic"></button>
+          <button class="gal-thumb" data-src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley3.jpg?v=1772438587"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley3.jpg?v=1772438587" alt="Why Peach &amp; Flow infographic"></button>
+          <button class="gal-thumb" data-src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley2.jpg?v=1772438588"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley2.jpg?v=1772438588" alt="Wash care infographic"></button>
         </div>
       </div>
       <!-- INFO -->
@@ -402,19 +445,20 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
         <h1>Watermelons</h1>
         <div class="pdp-sub">Pilates Grip Socks</div>
         <div class="pdp-rating"><span class="stars">★★★★★</span><a href="#reviews">4.9 · 51 reviews</a></div>
-        <div class="pdp-price">£13.99</div>
+        <div class="pdp-price">£14.99</div>
         <p class="pdp-desc">Cute design to match your vibe. Full-coverage hex grip that lasts wash after wash, arch-supported comfort, and a premium cotton blend. One size fits all (UK 3–6).</p>
-        <div class="pdp-pills"><span class="pdp-pill">Full-coverage hex grip</span><span class="pdp-pill">Arch support</span><span class="pdp-pill">85% cotton</span><span class="pdp-pill">One size · UK 3–6</span></div>
+        <div class="pdp-pills"><span class="pdp-pill">Full-coverage hex grip</span><span class="pdp-pill">Arch support</span><span class="pdp-pill">85% cotton</span><span class="pdp-pill">One size · UK 3–6</span><a class="pdp-pill" href="size-guide.html" style="text-decoration:underline">Size guide</a></div>
 
-        <div class="opt sel" data-qty="1"><span class="radio"></span><span class="otext"><b>One pair</b><small>Just the essentials</small></span><span class="oprice">£13.99</span></div>
-        <div class="opt" data-qty="2"><span class="radio"></span><span class="otext"><b>Two pairs <span class="obadge">Save 15%</span></b><small>£11.89 each</small></span><span class="oprice">£23.78</span></div>
-        <div class="opt" data-qty="4"><span class="radio"></span><span class="otext"><b>Four pairs <span class="obadge">Most popular</span></b><small>£10.49 each · 25% off</small></span><span class="oprice">£41.97</span></div>
+        <div class="opt sel" data-qty="1"><span class="radio"></span><span class="otext"><b>One pair</b><small>Just the essentials</small></span><span class="oprice">£14.99</span></div>
+        <div class="opt" data-qty="2"><span class="radio"></span><span class="otext"><b>Two pairs <span class="obadge">Save 15%</span></b><small>£12.74 each · free UK shipping</small></span><span class="oprice">£25.48</span></div>
+        <div class="opt" data-qty="4"><span class="radio"></span><span class="otext"><b>Four pairs <span class="obadge">Most popular</span></b><small>£11.24 each · 25% off</small></span><span class="oprice">£44.97</span></div>
 
+        <div class="stockline">Low stock, selling fast</div>
         <div class="buybar">
           <div class="qty-stepper"><button id="qdec" aria-label="Decrease">−</button><span class="qv" id="qv">1</span><button id="qinc" aria-label="Increase">+</button></div>
-          <button class="atc" id="atc">Add to bag · £13.99</button>
+          <button class="atc" id="atc">Add to bag · £14.99</button>
         </div>
-        <a class="bundle-link" href="bundle.html">Or mix &amp; match a bundle, up to 50% off →</a>
+        <a class="bundle-link" href="bundle.html">Or mix &amp; match a bundle, up to 50% off 10+ pairs →</a>
         <div class="trust"><span><span class="dot"></span> Free UK shipping over £25</span><span><span class="dot"></span> Ships within 24 hours</span><span><span class="dot"></span> Easy returns</span></div>
 
         <div class="pdp-acc">
@@ -444,7 +488,7 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
 <!-- REVIEWS -->
 <section class="rev" id="reviews">
   <div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">Loved by thousands</span><h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-top:10px">What buyers say</h2></div></div>
+    <div class="sec-head"><div><span class="eyebrow">Rated 4.9 from 125+ reviews</span><h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-top:10px">What buyers say</h2></div></div>
     <div class="rev-top">
       <div class="rev-score">
         <div class="num">4.9</div>
@@ -510,19 +554,19 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
     <div class="xgrid">
       <a class="card" href="product.html">
         <div class="card-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images3.jpg?v=1776886148" alt="Less Drama More Matcha"></div></div>
-        <div class="card-body"><h3>Less Drama More Matcha</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.9</span></div></div>
+        <div class="card-body"><h3>Less Drama More Matcha</h3><div class="card-meta"><span class="price">£14.99</span><span>★ 4.9</span></div></div>
       </a>
       <a class="card" href="product.html">
         <div class="card-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images1_0f90c808-0095-458e-8839-7379ba292f5b.jpg?v=1776886147" alt="Eggs"></div></div>
-        <div class="card-body"><h3>Eggs</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.9</span></div></div>
+        <div class="card-body"><h3>Eggs</h3><div class="card-meta"><span class="price">£14.99</span><span>★ 4.9</span></div></div>
       </a>
       <a class="card" href="product.html">
-        <div class="card-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images4.jpg?v=1776886147" alt="Peaches"></div></div>
-        <div class="card-body"><h3>Peaches</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.9</span></div></div>
+        <div class="card-img"><span class="badge terra">Bestseller</span><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images6.jpg?v=1776886147" alt="You're a Hottie"></div></div>
+        <div class="card-body"><h3>You’re a Hottie</h3><div class="card-meta"><span class="price">£14.99</span><span>★ 4.9</span></div></div>
       </a>
       <a class="card" href="product.html">
-        <div class="card-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images2.jpg?v=1776886147" alt="Smiley Faces"></div></div>
-        <div class="card-body"><h3>Smiley Faces</h3><div class="card-meta"><span class="price">£13.99</span><span>★ 4.9</span></div></div>
+        <div class="card-img"><span class="badge out">Sold out</span><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images2.jpg?v=1776886147" alt="Smiley Faces"></div></div>
+        <div class="card-body"><h3>Smiley Faces</h3><div class="card-meta"><span class="price">£14.99</span><span>★ 4.9</span></div></div>
       </a>
     </div>
   </div>
@@ -568,6 +612,14 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
   </div>
 </section>
 
+<!-- EMAIL CAPTURE -->
+<section class="joinflow">
+  <span class="eyebrow">Join the flow</span>
+  <h2 style="margin-top:8px">First dibs on restocks</h2>
+  <p>New drops, restock alerts and 10% off your first pair, straight to your inbox.</p>
+  <form onsubmit="return false"><input type="email" placeholder="you@email.com" aria-label="Email address"><button class="btn">Sign me up</button></form>
+</section>
+
 <footer>
   <div class="wrap foot">
     <div class="foot-grid">
@@ -576,13 +628,13 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
         <p class="tag">Cute grip socks for every flow. Designed in the UK, loved everywhere.</p>
         <div class="foot-social"><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a><a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.05-2.82h-3.01v12.06a2.43 2.43 0 1 1-1.74-2.33V9.66a5.45 5.45 0 1 0 4.75 5.4V9.01a7.3 7.3 0 0 0 4.25 1.36V7.36a4.28 4.28 0 0 1-3.2-1.54z"/></svg></a></div>
       </div>
-      <div><h4>Shop</h4><a href="#">Shop All</a><a href="#">Bundle Builder</a></div>
-      <div><h4>Help</h4><a href="our-story.html">Our Story</a><a href="wholesale.html">Wholesale</a><a href="shipping.html">Shipping</a><a href="returns.html">Returns</a><a href="size-guide.html">Size guide</a><a href="contact.html">Contact</a></div><div><h4>The fine print</h4><a href="#">Terms of Service</a><a href="#">Privacy Policy</a></div>
+      <div><h4>Shop</h4><a href="shop.html">Shop All</a><a href="bundle.html">Bundle Builder</a></div>
+      <div><h4>About</h4><a href="our-story.html">Our Story</a><a href="wholesale.html">Wholesale</a></div><div><h4>Help</h4><a href="shipping.html">Shipping</a><a href="returns.html">Returns</a><a href="size-guide.html">Size guide</a><a href="contact.html">Contact</a></div><div><h4>The fine print</h4><a href="#">Terms of Service</a><a href="#">Privacy Policy</a></div>
       
     </div>
     <div class="foot-bottom">
       <span>© 2026 Peach & Flow. All rights reserved.</span>
-      <span>Privacy · Terms</span>
+      <div class="paymarks"><span>Visa</span><span>Mastercard</span><span>Amex</span><span>Apple Pay</span><span>Google Pay</span><span>Shop Pay</span><span>PayPal</span><span>Klarna</span></div>
     </div>
   </div>
 </footer>
@@ -610,7 +662,7 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
   document.getElementById('qinc').addEventListener('click',function(){qty++;document.getElementById('qv').textContent=qty;render();});
   function tierPct(q){var p=0;[[2,15],[4,25],[6,35],[8,45],[10,50]].forEach(function(t){if(q>=t[0])p=t[1];});return p;}
   function render(){
-    var price=13.99, sub=price*qty, pct=tierPct(qty), tot=sub*(1-pct/100);
+    var price=14.99, sub=price*qty, pct=tierPct(qty), tot=sub*(1-pct/100);
     var btn=document.getElementById('atc');
     btn.textContent='Add to bag · '+fmt(tot)+(pct>0?'  ('+pct+'% off)':'');
   }
@@ -623,5 +675,44 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
 })();
 </script>
 
+
+<div class="drawer" id="pfdrawer">
+  <div class="ov" onclick="document.getElementById('pfdrawer').classList.remove('open')"></div>
+  <div class="panel">
+    <button class="dx" aria-label="Close menu" onclick="document.getElementById('pfdrawer').classList.remove('open')">&times;</button>
+    <div class="dh">Shop</div>
+    <a href="shop.html">Shop All</a>
+    <a href="bundle.html">Bundle Builder</a>
+    <div class="dh">About</div>
+    <a href="our-story.html">Our Story</a>
+    <a href="wholesale.html">Wholesale</a>
+    <div class="dh">Help</div>
+    <a href="shipping.html">Shipping</a>
+    <a href="returns.html">Returns</a>
+    <a href="size-guide.html">Size guide</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+
+<div class="sticky-atc" id="stickyAtc">
+  <img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images8.jpg?v=1776886149" alt="">
+  <div class="si"><b>Watermelons</b><span id="saSub">Low stock, selling fast</span></div>
+  <button id="saBtn">Add to bag · £14.99</button>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('stickyAtc'), atc=document.getElementById('atc'), btn=document.getElementById('saBtn');
+  function sync(){ btn.textContent=atc.textContent; }
+  new MutationObserver(sync).observe(atc,{childList:true,characterData:true,subtree:true}); sync();
+  btn.addEventListener('click',function(){ atc.click(); });
+  var buy=document.querySelector('.buybar');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){
+      var e=en[0]; bar.classList.toggle('show', !e.isIntersecting && e.boundingClientRect.top<0);
+    },{threshold:0}).observe(buy);
+  }
+})();
+</script>
 </body>
 </html>

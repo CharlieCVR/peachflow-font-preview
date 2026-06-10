@@ -17,13 +17,14 @@
 
   :root{
     --terra:#ec9e6d;          /* brand peach */
-    --terra-deep:#d97a45;     /* deeper for CTAs */
+    --terra-deep:#d97a45;
+    --terra-text:#b35a24;     /* deeper for CTAs */
     --cream:#ecd7c2;          /* brand cream */
     --cream-bg:#f7eee4;       /* soft section bg */
     --cream-soft:#fbf6f0;
     --offwhite:#f4eade;       /* warm off-white (replaces solid white) */
     --ink:#2a2017;            /* warm near-black */
-    --muted:#8c7d6e;
+    --muted:#6b5c4c;
     --line:#e7dccd;
     --radius:18px;
   }
@@ -200,7 +201,7 @@
   /* Footer */
   footer{background:var(--ink);color:var(--cream)}
   .foot{padding:72px 0 32px}
-  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
   .foot-grid h4{font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--terra);margin-bottom:18px}
   .foot-grid a{display:block;opacity:.7;margin-bottom:11px;font-size:.94rem;transition:opacity .2s}
   .foot-grid a:hover{opacity:1}
@@ -299,6 +300,44 @@ body{font-family:'Neue Montreal','Inter',system-ui,sans-serif}
 h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
 .btn,.news-form input,button,input,select,textarea{font-family:'Neue Montreal','Inter',sans-serif}
 .hero h1{line-height:.95}
+
+/* ===== audit pass: tokens, contrast, mobile nav, payments, email band ===== */
+.eyebrow{color:var(--terra-text)}
+.press-track span{color:var(--ink)}
+.press:hover .press-track{animation-play-state:paused}
+.bag-count{color:var(--ink)}
+.badge.terra{color:var(--ink)}
+.vs-check{background:var(--terra-deep)}
+.foot-grid a{opacity:.85}
+input:focus,textarea:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--terra-deep);outline-offset:2px}
+.paymarks{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.paymarks span{background:rgba(255,255,255,.95);color:#2a2017;border-radius:5px;padding:3px 9px;font-size:.64rem;font-weight:700;letter-spacing:.02em}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;color:var(--ink);padding:6px;align-items:center}
+.menu-btn svg{width:26px;height:26px;display:block}
+.drawer{position:fixed;inset:0;z-index:120;visibility:hidden}
+.drawer.open{visibility:visible}
+.drawer .ov{position:absolute;inset:0;background:rgba(42,32,23,.45);opacity:0;transition:opacity .25s}
+.drawer.open .ov{opacity:1}
+.drawer .panel{position:absolute;top:0;right:0;bottom:0;width:min(84vw,360px);background:var(--offwhite);padding:24px 28px;transform:translateX(100%);transition:transform .28s;display:flex;flex-direction:column;overflow-y:auto}
+.drawer.open .panel{transform:none}
+.drawer .panel a{font-size:1.12rem;font-weight:600;padding:13px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+.drawer .panel .dx{align-self:flex-end;background:none;border:none;font-size:1.7rem;cursor:pointer;color:var(--ink);padding:2px 8px;line-height:1}
+.drawer .dh{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-text);margin:24px 0 2px}
+.joinflow{margin:0 28px 28px;background:var(--cream-bg);border:1.5px solid var(--line);border-radius:28px;padding:48px 24px;text-align:center}
+.joinflow h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-.03em}
+.joinflow p{color:var(--muted);margin:8px 0 22px}
+.joinflow form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.joinflow input{border:1.5px solid var(--line);border-radius:100px;padding:14px 22px;font-size:1rem;font-family:inherit;background:#fff;min-width:min(320px,76vw)}
+@media(max-width:900px){.menu-btn{display:flex}}
+@media(max-width:640px){.foot-grid{grid-template-columns:1fr 1fr;gap:30px}.foot-bottom{flex-direction:column;align-items:flex-start;gap:14px}}
+@media(prefers-reduced-motion:reduce){.press-track,.testi-track,.social-track{animation:none!important}}
+body{overflow-x:hidden}
+.ladder .ppp{display:block;font-size:.7rem;font-weight:700;color:var(--muted);margin-top:5px;text-align:center}
+.shipline{font-size:.84rem;font-weight:700;margin:0 0 12px;color:var(--terra-text)}.shipline.ok{color:#4d7c43}
+.bsticky{position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--ink);color:#fff;padding:12px 18px;display:none;align-items:center;gap:14px}
+.bsticky .bsi{flex:1;min-width:0}.bsticky .bsi b{display:block;font-size:.95rem}.bsticky .bsi span{font-size:.78rem;opacity:.85}
+.bsticky button{background:var(--terra);border:none;color:var(--ink);font-weight:700;border-radius:100px;padding:12px 20px;font-family:inherit;cursor:pointer;white-space:nowrap}
+@media(max-width:900px){.bsticky{display:flex}footer{padding-bottom:78px}}
 </style>
 </head>
 <body>
@@ -329,7 +368,7 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
       <a href="shop.html">Shop All</a>
       <a href="bundle.html" class="active">Bundle Builder</a>
     </nav>
-    <div class="nav-actions">
+    <div class="nav-actions"><button class="menu-btn" aria-label="Open menu" onclick="document.getElementById('pfdrawer').classList.add('open')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
       <a href="#">Search</a>
       <a href="#">Account</a>
       <span class="bag">Bag <span class="bag-count">0</span></span>
@@ -350,31 +389,31 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
       <div class="step" data-q="2">
         <span class="pack">2+ Pack</span>
         <div class="pill"><span class="pct">15</span><span class="pctsym"><i>%</i><b>OFF</b></span></div>
-        
+        <span class="ppp">£12.74/pair · free UK shipping</span>
       </div>
       <div class="dots"></div>
       <div class="step" data-q="4">
         <span class="pack">4+ Pack</span>
         <div class="pill"><span class="pct">25</span><span class="pctsym"><i>%</i><b>OFF</b></span></div>
-        
+        <span class="lbadge pop">Most Popular</span><span class="ppp">£11.24/pair</span>
       </div>
       <div class="dots"></div>
       <div class="step" data-q="6">
         <span class="pack">6+ Pack</span>
         <div class="pill"><span class="pct">35</span><span class="pctsym"><i>%</i><b>OFF</b></span></div>
-        <span class="lbadge pop">Most Popular</span>
+        <span class="ppp">£9.74/pair</span>
       </div>
       <div class="dots"></div>
       <div class="step" data-q="8">
         <span class="pack">8+ Pack</span>
         <div class="pill"><span class="pct">45</span><span class="pctsym"><i>%</i><b>OFF</b></span></div>
-        
+        <span class="ppp">£8.24/pair</span>
       </div>
       <div class="dots"></div>
       <div class="step best" data-q="10">
         <span class="pack">10+ Pack</span>
         <div class="pill"><span class="pct">50</span><span class="pctsym"><i>%</i><b>OFF</b></span></div>
-        <span class="lbadge best">Best Value</span>
+        <span class="lbadge best">Best Value</span><span class="ppp">£7.49/pair</span>
       </div>
   </div>
   <div class="ladder-msg" id="lmsg">Add 2 pairs to unlock 15% off, mix &amp; match any designs.</div>
@@ -383,49 +422,49 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
     <div class="bprod-grid">
       <div class="bcard" data-id="matcha" data-name="Less Drama More Matcha">
         <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images3.jpg?v=1776886148" alt="Less Drama More Matcha" loading="lazy"></div></div>
-        <div class="bcard-info"><h3>Less Drama More Matcha</h3><span class="bprice">£13.99</span></div>
+        <div class="bcard-info"><h3>Less Drama More Matcha</h3><span class="bprice">£14.99</span></div>
         <button class="add-btn" data-act="add">Add to bundle</button>
         <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
       </div>
       <div class="bcard" data-id="eggs" data-name="Eggs">
         <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images1_0f90c808-0095-458e-8839-7379ba292f5b.jpg?v=1776886147" alt="Eggs" loading="lazy"></div></div>
-        <div class="bcard-info"><h3>Eggs</h3><span class="bprice">£13.99</span></div>
+        <div class="bcard-info"><h3>Eggs</h3><span class="bprice">£14.99</span></div>
         <button class="add-btn" data-act="add">Add to bundle</button>
         <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
       </div>
       <div class="bcard" data-id="watermelons" data-name="Watermelons">
         <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images8.jpg?v=1776886149" alt="Watermelons" loading="lazy"></div></div>
-        <div class="bcard-info"><h3>Watermelons</h3><span class="bprice">£13.99</span></div>
+        <div class="bcard-info"><h3>Watermelons</h3><span class="bprice">£14.99</span></div>
         <button class="add-btn" data-act="add">Add to bundle</button>
         <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
       </div>
       <div class="bcard" data-id="peaches" data-name="Peaches">
         <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images4.jpg?v=1776886147" alt="Peaches" loading="lazy"></div></div>
-        <div class="bcard-info"><h3>Peaches</h3><span class="bprice">£13.99</span></div>
+        <div class="bcard-info"><h3>Peaches</h3><span class="bprice">£14.99</span></div>
         <button class="add-btn" data-act="add">Add to bundle</button>
         <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
       </div>
       <div class="bcard" data-id="flowers" data-name="Flowers">
         <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images5.jpg?v=1776886147" alt="Flowers" loading="lazy"></div></div>
-        <div class="bcard-info"><h3>Flowers</h3><span class="bprice">£13.99</span></div>
+        <div class="bcard-info"><h3>Flowers</h3><span class="bprice">£14.99</span></div>
         <button class="add-btn" data-act="add">Add to bundle</button>
         <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
       </div>
       <div class="bcard" data-id="chilis" data-name="Chilis">
         <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images7.jpg?v=1776886147" alt="Chilis" loading="lazy"></div></div>
-        <div class="bcard-info"><h3>Chilis</h3><span class="bprice">£13.99</span></div>
+        <div class="bcard-info"><h3>Chilis</h3><span class="bprice">£14.99</span></div>
         <button class="add-btn" data-act="add">Add to bundle</button>
         <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
       </div>
       <div class="bcard" data-id="hottie" data-name="You’re a Hottie">
         <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images6.jpg?v=1776886147" alt="You’re a Hottie" loading="lazy"></div></div>
-        <div class="bcard-info"><h3>You’re a Hottie</h3><span class="bprice">£13.99</span></div>
+        <div class="bcard-info"><h3>You’re a Hottie</h3><span class="bprice">£14.99</span></div>
         <button class="add-btn" data-act="add">Add to bundle</button>
         <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
       </div>
       <div class="bcard" data-id="smiley" data-name="Smiley Faces">
         <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images2.jpg?v=1776886147" alt="Smiley Faces" loading="lazy"></div></div>
-        <div class="bcard-info"><h3>Smiley Faces</h3><span class="bprice">£13.99</span></div>
+        <div class="bcard-info"><h3>Smiley Faces</h3><span class="bprice">£14.99</span></div>
         <button class="add-btn" data-act="add">Add to bundle</button>
         <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
       </div>
@@ -440,11 +479,20 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
       <div class="sum-row disc" id="rowDisc" style="display:none"><span id="discLabel">Bundle discount</span><span id="discVal">−£0.00</span></div>
       <div class="sum-row total"><span>Total</span><span id="rowTotal">£0.00</span></div>
       <span class="savepill" id="savePill" style="display:none"></span>
+      <div class="shipline" id="shipLine" style="display:none"></div>
       <button class="checkout-btn" id="checkout" disabled>Add a pair to start</button>
       <div class="powered">Bundle pricing powered by Bundle Deals · applied at checkout</div>
     </aside>
   </div>
 </div>
+
+<!-- EMAIL CAPTURE -->
+<section class="joinflow">
+  <span class="eyebrow">Join the flow</span>
+  <h2 style="margin-top:8px">First dibs on restocks</h2>
+  <p>New drops, restock alerts and 10% off your first pair, straight to your inbox.</p>
+  <form onsubmit="return false"><input type="email" placeholder="you@email.com" aria-label="Email address"><button class="btn">Sign me up</button></form>
+</section>
 
 <footer>
   <div class="wrap foot">
@@ -454,19 +502,19 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
         <p class="tag">Cute grip socks for every flow. Designed in the UK, loved everywhere.</p>
         <div class="foot-social"><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a><a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.05-2.82h-3.01v12.06a2.43 2.43 0 1 1-1.74-2.33V9.66a5.45 5.45 0 1 0 4.75 5.4V9.01a7.3 7.3 0 0 0 4.25 1.36V7.36a4.28 4.28 0 0 1-3.2-1.54z"/></svg></a></div>
       </div>
-      <div><h4>Shop</h4><a href="#">Shop All</a><a href="#">Bundle Builder</a></div>
-      <div><h4>Help</h4><a href="our-story.html">Our Story</a><a href="wholesale.html">Wholesale</a><a href="shipping.html">Shipping</a><a href="returns.html">Returns</a><a href="size-guide.html">Size guide</a><a href="contact.html">Contact</a></div><div><h4>The fine print</h4><a href="#">Terms of Service</a><a href="#">Privacy Policy</a></div>
+      <div><h4>Shop</h4><a href="shop.html">Shop All</a><a href="bundle.html">Bundle Builder</a></div>
+      <div><h4>About</h4><a href="our-story.html">Our Story</a><a href="wholesale.html">Wholesale</a></div><div><h4>Help</h4><a href="shipping.html">Shipping</a><a href="returns.html">Returns</a><a href="size-guide.html">Size guide</a><a href="contact.html">Contact</a></div><div><h4>The fine print</h4><a href="#">Terms of Service</a><a href="#">Privacy Policy</a></div>
       
     </div>
     <div class="foot-bottom">
       <span>© 2026 Peach & Flow. All rights reserved.</span>
-      <span>Privacy · Terms</span>
+      <div class="paymarks"><span>Visa</span><span>Mastercard</span><span>Amex</span><span>Apple Pay</span><span>Google Pay</span><span>Shop Pay</span><span>PayPal</span><span>Klarna</span></div>
     </div>
   </div>
 </footer>
 <script>
 (function(){
-  var PRICE=13.99;
+  var PRICE=14.99;
   var TIERS=[{q:2,pct:15},{q:4,pct:25},{q:6,pct:35},{q:8,pct:45},{q:10,pct:50}]; // 2+/20  4+/27  6+/33  8+/45
   var bundle={}; var names={}, imgs={};
   document.querySelectorAll('.bcard').forEach(function(c){names[c.dataset.id]=c.dataset.name; imgs[c.dataset.id]=c.querySelector('img').src;});
@@ -521,5 +569,47 @@ h1,h2,h3{font-family:'Neue Montreal','Inter',sans-serif;letter-spacing:-.03em}
 })();
 </script>
 
+
+<div class="drawer" id="pfdrawer">
+  <div class="ov" onclick="document.getElementById('pfdrawer').classList.remove('open')"></div>
+  <div class="panel">
+    <button class="dx" aria-label="Close menu" onclick="document.getElementById('pfdrawer').classList.remove('open')">&times;</button>
+    <div class="dh">Shop</div>
+    <a href="shop.html">Shop All</a>
+    <a href="bundle.html">Bundle Builder</a>
+    <div class="dh">About</div>
+    <a href="our-story.html">Our Story</a>
+    <a href="wholesale.html">Wholesale</a>
+    <div class="dh">Help</div>
+    <a href="shipping.html">Shipping</a>
+    <a href="returns.html">Returns</a>
+    <a href="size-guide.html">Size guide</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+
+<div class="bsticky" id="bsticky">
+  <div class="bsi"><b id="bsLine">0 pairs · £0.00</b><span id="bsMsg">Add 2 pairs to unlock 15% off</span></div>
+  <button onclick="document.querySelector('.summary').scrollIntoView({behavior:'smooth'})">View bundle</button>
+</div>
+<script>
+(function(){
+  var rowTotal=document.getElementById('rowTotal'), sumCount=document.getElementById('sumCount'),
+      lmsg=document.getElementById('lmsg'), ship=document.getElementById('shipLine'),
+      bsM=document.getElementById('bsMsg');
+  function upd(){
+    var tot=parseFloat((rowTotal.textContent||'').replace(/[^0-9.]/g,''))||0;
+    var q=parseInt(sumCount.textContent)||0;
+    document.getElementById('bsLine').textContent=q+' '+(q===1?'pair':'pairs')+' · '+rowTotal.textContent; bsM.textContent=lmsg.textContent;
+    if(q===0){ship.style.display='none';}
+    else if(tot>=25){ship.style.display='block';ship.className='shipline ok';ship.textContent='✓ Free UK shipping unlocked';}
+    else{ship.style.display='block';ship.className='shipline';ship.textContent='You are £'+(25-tot).toFixed(2)+' from free UK shipping';}
+  }
+  new MutationObserver(upd).observe(rowTotal,{childList:true,characterData:true,subtree:true});
+  new MutationObserver(upd).observe(lmsg,{childList:true,characterData:true,subtree:true});
+  upd();
+})();
+</script>
 </body>
 </html>
