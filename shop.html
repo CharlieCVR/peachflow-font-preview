@@ -347,18 +347,6 @@ body{overflow-x:hidden}
 </section>
 
 <div class="wrap">
-  <div class="shop-bar">
-    <span class="count" id="count">8 products</span>
-    <div class="filters">
-      <button class="chip active" data-filter="all">All</button>
-      <button class="chip" data-filter="in">In stock</button>
-      <button class="chip" data-filter="out">Sold out</button>
-      <button class="chip" data-filter="best">Bestsellers</button>
-    </div>
-    <div class="sortwrap"><label for="sort">Sort</label>
-      <select id="sort"><option>Featured</option><option>Bestselling</option><option>Price: low to high</option><option>Price: high to low</option><option>Newest</option></select>
-    </div>
-  </div>
   <div class="shop-grid">
     <div class="grid">
 
@@ -441,24 +429,6 @@ body{overflow-x:hidden}
     </div>
   </div>
 </footer>
-<script>
-(function(){
-  var chips=document.querySelectorAll('.chip');
-  var cards=document.querySelectorAll('.shop-grid .card');
-  var count=document.getElementById('count');
-  function plural(n){return n+' product'+(n===1?'':'s');}
-  chips.forEach(function(c){c.addEventListener('click',function(){
-    chips.forEach(function(x){x.classList.remove('active');});
-    c.classList.add('active');
-    var f=c.dataset.filter,n=0;
-    cards.forEach(function(card){
-      var show = f==='all' || (f==='in'&&card.dataset.status==='in') || (f==='out'&&card.dataset.status==='out') || (f==='best'&&card.dataset.best==='1');
-      card.style.display=show?'':'none'; if(show)n++;
-    });
-    count.textContent=plural(n);
-  });});
-})();
-</script>
 
 
 <div class="drawer" id="pfdrawer">
