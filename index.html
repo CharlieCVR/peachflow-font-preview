@@ -289,10 +289,10 @@ input:focus,textarea:focus,select:focus,button:focus-visible,a:focus-visible{out
 @media(prefers-reduced-motion:reduce){.press-track,.testi-track,.social-track{animation:none!important}}
 body{overflow-x:hidden}
 
-.bteaser{margin:0 28px 28px;background:var(--cream-bg);border:1.5px solid var(--line);border-radius:28px;padding:56px 24px}
+.bteaser{margin:0 28px 28px;background:var(--terra);border:1.5px solid #cf9061;border-radius:28px;padding:56px 24px}.bteaser .eyebrow{color:var(--ink)}
 .bt-in{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:center}
 .bt-copy h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.03em;margin:12px 0 14px}
-.bt-copy p{color:var(--muted);max-width:420px;margin-bottom:26px}
+.bt-copy p{color:var(--ink);opacity:.85;max-width:420px;margin-bottom:26px}
 .bt-imgs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .bt-imgs .ph{aspect-ratio:.9;border-radius:16px;overflow:hidden;background:#fff;border:1.5px solid var(--line)}
 .bt-imgs img{width:100%;height:100%;object-fit:cover}
@@ -505,15 +505,24 @@ body{overflow-x:hidden}
 
 <!-- TESTIMONIALS -->
 <section class="section testi">
-  <div class="wrap" style="margin-bottom:36px;text-align:center">
+  <div class="wrap" style="margin-bottom:36px">
     <span class="eyebrow">Rated 4.9 from 125+ reviews</span>
     <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-top:12px">Don't just take our word for it</h2>
   </div>
-  <div class="wrap"><div class="testi-grid">
+  <div class="testi-track">
     <div class="testi-card"><div class="stars">★★★★★</div><p>“Really impressed, the quality is amazing and the grip is the best I've had on any grip socks. The design is so cute too. A must for any Pilates or Yoga lover!”</p><div class="who">Verified buyer · Amazon</div></div>
     <div class="testi-card"><div class="stars">★★★★★</div><p>“The grip is really good quality and stops me slipping around when I wear them, thick and really comfortable. I'll definitely be buying another pair.”</p><div class="who">Fergy · Verified buyer</div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>“Super cute, very grippy, just as soft and thick as other brands I've bought in-studio before!”</p><div class="who">Verified buyer · Amazon</div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>“I gifted these and they became her favourite! The colours and quality are so good, sooo pretty.”</p><div class="who">Evelyn · Verified buyer</div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>“So comfy and cute. They wash nicely and have great grip.”</p><div class="who">Wendy · Verified buyer</div></div>
     <div class="testi-card"><div class="stars">★★★★★</div><p>“Cute, and they stayed put on my feet in class. LOVE these, going to order more!”</p><div class="who">Giselle · Verified buyer</div></div>
-  </div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>“Really impressed, the quality is amazing and the grip is the best I've had on any grip socks. The design is so cute too. A must for any Pilates or Yoga lover!”</p><div class="who">Verified buyer · Amazon</div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>“The grip is really good quality and stops me slipping around when I wear them, thick and really comfortable. I'll definitely be buying another pair.”</p><div class="who">Fergy · Verified buyer</div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>“Super cute, very grippy, just as soft and thick as other brands I've bought in-studio before!”</p><div class="who">Verified buyer · Amazon</div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>“I gifted these and they became her favourite! The colours and quality are so good, sooo pretty.”</p><div class="who">Evelyn · Verified buyer</div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>“So comfy and cute. They wash nicely and have great grip.”</p><div class="who">Wendy · Verified buyer</div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p>“Cute, and they stayed put on my feet in class. LOVE these, going to order more!”</p><div class="who">Giselle · Verified buyer</div></div>
+  </div>
 </section>
 
 <!-- SOCIAL / INSTAGRAM CAROUSEL -->
@@ -582,8 +591,10 @@ body{overflow-x:hidden}
   <div class="wrap">
     <span class="eyebrow">Ready when you are</span>
     <h2 style="font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:800;letter-spacing:-.035em;margin:14px 0 26px">Find your pair.</h2>
-    <a class="btn" href="shop.html">Shop the collection</a>
-    <div style="margin-top:16px"><a href="bundle.html" style="font-weight:600;border-bottom:1.5px solid var(--ink);padding-bottom:2px">Or build a bundle and save up to 45% →</a></div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn" href="shop.html">Shop the collection</a>
+      <a class="btn" href="bundle.html" style="background:transparent;color:var(--ink);border:1.5px solid var(--ink)">Bundle &amp; save up to 45%</a>
+    </div>
   </div>
 </section>
 
