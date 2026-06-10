@@ -1,0 +1,36 @@
+<!-- PRODUCT GRID -->
+<section class="section" id="shop">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>The Collection</h2>
+      </div>
+      <a class="sec-link" href="{{ section.settings.collection.url | default: routes.all_products_collection_url }}">View all socks &rarr;</a>
+    </div>
+    <div class="grid">
+{%- assign col = section.settings.collection | default: collections['all'] -%}
+{%- for product in col.products limit: 8 -%}
+      <a class="card" href="{{ product.url }}">
+        <div class="card-img">
+          {%- if product.available == false -%}<span class="badge out">Sold out</span>
+          {%- elsif product.tags contains 'bestseller' -%}<span class="badge terra">Bestseller</span>
+          {%- elsif product.tags contains 'low-stock' -%}<span class="badge">Low stock</span>
+          {%- else -%}<span class="badge">In stock</span>{%- endif -%}
+          <div class="ph">{{ product.featured_image | image_url: width: 600 | image_tag: alt: product.title, loading: 'lazy' }}</div>
+          <div class="quick">{% if product.available %}+ Add to bag{% else %}Notify me{% endif %}</div>
+        </div>
+        <div class="card-body"><h3>{{ product.title }}</h3><div class="card-meta"><span class="price">{{ product.price | money }}</span><span>&#9733; 4.9</span></div></div>
+      </a>
+{%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "PF Collection Grid",
+  "settings": [
+    { "type": "collection", "id": "collection", "label": "Collection" }
+  ],
+  "presets": [{ "name": "PF Collection Grid" }]
+}
+{% endschema %}

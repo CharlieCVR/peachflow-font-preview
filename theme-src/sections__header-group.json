@@ -1,0 +1,13 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "pf_header": {
+      "type": "pf-header",
+      "settings": {}
+    }
+  },
+  "order": [
+    "pf_header"
+  ]
+}

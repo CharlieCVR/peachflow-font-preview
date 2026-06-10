@@ -1,0 +1,26 @@
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="{{ 'pf-hero-main.jpg' | asset_url }}" alt="Peach & Flow smiley grip socks on a Pilates reformer" />
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="hero-rating"><span class="stars">★★★★★</span><span class="txt">4.9 / 5 based on 125+ reviews</span></div>
+      <h1>Grip socks,<br><span class="thin">elevated.</span></h1>
+      <div class="hero-cta">
+        <a class="btn" href="{{ routes.all_products_collection_url }}">Shop the collection</a>
+        <a class="btn ghost" href="#">Bundle & Save</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "PF Hero",
+  "settings": [],
+  "presets": [{ "name": "PF Hero" }]
+}
+{% endschema %}
