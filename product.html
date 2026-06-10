@@ -200,7 +200,7 @@
 
   /* Footer */
   footer{background:var(--ink);color:var(--cream)}
-  .foot{padding:72px 0 32px}
+  .foot{padding:72px 28px 32px}
   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
   .foot-grid h4{font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--terra);margin-bottom:18px}
   .foot-grid a{display:block;opacity:.7;margin-bottom:11px;font-size:.94rem;transition:opacity .2s}
@@ -358,7 +358,7 @@ input:focus,textarea:focus,select:focus,button:focus-visible,a:focus-visible{out
 .paymarks img{height:24px;width:auto;border-radius:4px;display:block}
 .menu-btn{display:none;background:none;border:none;cursor:pointer;color:var(--ink);padding:6px;align-items:center}
 .menu-btn svg{width:26px;height:26px;display:block}
-.drawer{position:fixed;inset:0;z-index:120;visibility:hidden}
+.drawer{position:fixed;inset:0;z-index:120;visibility:hidden;overflow:hidden}
 .drawer.open{visibility:visible}
 .drawer .ov{position:absolute;inset:0;background:rgba(42,32,23,.45);opacity:0;transition:opacity .25s}
 .drawer.open .ov{opacity:1}
@@ -386,7 +386,7 @@ body{overflow-x:hidden}
 .sticky-atc .si b{display:block;font-size:.95rem}
 .sticky-atc .si span{font-size:.82rem;color:var(--muted)}
 .sticky-atc button{background:var(--ink);color:#fff;border:none;border-radius:100px;padding:13px 22px;font-weight:700;font-family:inherit;font-size:.92rem;cursor:pointer;white-space:nowrap}
-</style>
+.obadge{white-space:nowrap}@media(max-width:560px){.opt .otext b{display:flex;flex-wrap:wrap;align-items:center;gap:6px}}</style>
 </head>
 <body>
 

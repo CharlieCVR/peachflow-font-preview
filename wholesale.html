@@ -200,7 +200,7 @@
 
   /* Footer */
   footer{background:var(--ink);color:var(--cream)}
-  .foot{padding:72px 0 32px}
+  .foot{padding:72px 28px 32px}
   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
   .foot-grid h4{font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--terra);margin-bottom:18px}
   .foot-grid a{display:block;opacity:.7;margin-bottom:11px;font-size:.94rem;transition:opacity .2s}
@@ -260,7 +260,7 @@ input:focus,textarea:focus,select:focus,button:focus-visible,a:focus-visible{out
 .paymarks img{height:24px;width:auto;border-radius:4px;display:block}
 .menu-btn{display:none;background:none;border:none;cursor:pointer;color:var(--ink);padding:6px;align-items:center}
 .menu-btn svg{width:26px;height:26px;display:block}
-.drawer{position:fixed;inset:0;z-index:120;visibility:hidden}
+.drawer{position:fixed;inset:0;z-index:120;visibility:hidden;overflow:hidden}
 .drawer.open{visibility:visible}
 .drawer .ov{position:absolute;inset:0;background:rgba(42,32,23,.45);opacity:0;transition:opacity .25s}
 .drawer.open .ov{opacity:1}
@@ -280,7 +280,7 @@ input:focus,textarea:focus,select:focus,button:focus-visible,a:focus-visible{out
 body{overflow-x:hidden}
 .flabel{display:block;font-size:.8rem;font-weight:700;letter-spacing:.04em;margin:4px 0 7px;color:var(--ink)}
 .fsel{border:1.5px solid var(--line);border-radius:100px;padding:15px 22px;font-size:1rem;font-family:inherit;background:#fff;width:100%;-webkit-appearance:none;appearance:none}
-</style>
+@media(max-width:760px){.cardrow{grid-template-columns:1fr!important}.bt-imgs{grid-template-columns:repeat(3,1fr)}}</style>
 </head>
 <body>
 
@@ -330,7 +330,7 @@ body{overflow-x:hidden}
 <section class="section">
   <div class="wrap">
   <div class="sec-head"><div><span class="eyebrow">Why stock us</span><h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.03em;margin-top:10px">Socks that sell themselves.</h2></div></div>
-  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
+  <div class="cardrow" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
 <div style="background:var(--cream-soft);border:1.5px solid var(--line);border-radius:20px;padding:32px"><h3 style="font-size:1.28rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px">Healthy margins</h3><p style="color:var(--muted);line-height:1.55">Strong wholesale pricing with a low minimum order, so it&rsquo;s easy to start and easy to reorder.</p></div>
 <div style="background:var(--cream-soft);border:1.5px solid var(--line);border-radius:20px;padding:32px"><h3 style="font-size:1.28rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px">Proven sellers</h3><p style="color:var(--muted);line-height:1.55">4.9/5 from 125+ reviews. The designs do the talking and the grip keeps them coming back.</p></div>
 <div style="background:var(--cream-soft);border:1.5px solid var(--line);border-radius:20px;padding:32px"><h3 style="font-size:1.28rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px">Fast UK dispatch</h3><p style="color:var(--muted);line-height:1.55">Designed and shipped from the UK, with restocks turned around in days, not weeks.</p></div>
@@ -341,7 +341,7 @@ body{overflow-x:hidden}
 <section class="section" style="padding-top:0">
   <div class="wrap">
   <div class="sec-head"><div><span class="eyebrow">How it works</span><h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.03em;margin-top:10px">Three steps to stocked.</h2></div></div>
-  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
+  <div class="cardrow" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
 <div style="background:var(--cream-soft);border:1.5px solid var(--line);border-radius:20px;padding:32px"><div style="width:38px;height:38px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-items:center;font-weight:800;margin-bottom:16px">1</div><h3 style="font-size:1.28rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px">Apply</h3><p style="color:var(--muted);line-height:1.55">Fill in the short form below and tell us about your studio or store.</p></div>
 <div style="background:var(--cream-soft);border:1.5px solid var(--line);border-radius:20px;padding:32px"><div style="width:38px;height:38px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-items:center;font-weight:800;margin-bottom:16px">2</div><h3 style="font-size:1.28rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px">Get your pack</h3><p style="color:var(--muted);line-height:1.55">We&rsquo;ll send wholesale pricing, minimums and a full line sheet.</p></div>
 <div style="background:var(--cream-soft);border:1.5px solid var(--line);border-radius:20px;padding:32px"><div style="width:38px;height:38px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-items:center;font-weight:800;margin-bottom:16px">3</div><h3 style="font-size:1.28rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px">Order &amp; restock</h3><p style="color:var(--muted);line-height:1.55">Place your first order and top up anytime. Restocks ship fast.</p></div>
