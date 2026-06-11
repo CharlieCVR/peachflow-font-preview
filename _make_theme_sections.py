@@ -128,6 +128,10 @@ for a, b in [('href="shop.html"', 'href="{{ routes.all_products_collection_url }
              ('href="terms-of-service.html"', 'href="/pages/terms-of-service"'),
              ('href="privacy-policy.html"', 'href="/pages/privacy-policy"')]:
     ft = ft.replace(a, b)
+# footer social icons -> real brand URLs
+ft = ft.replace('<a href="#" aria-label="Instagram"', '<a href="https://www.instagram.com/peachandflow_" target="_blank" rel="noopener" aria-label="Instagram"')
+ft = ft.replace('<a href="#" aria-label="Facebook"', '<a href="https://www.facebook.com/peachandflow_" target="_blank" rel="noopener" aria-label="Facebook"')
+ft = ft.replace('<a href="#" aria-label="TikTok"', '<a href="https://www.tiktok.com/@peachandflow_" target="_blank" rel="noopener" aria-label="TikTok"')
 # native payment icons
 ft = re.sub(r'<div class="paymarks">.*?</div>',
             '<div class="paymarks">{% for type in shop.enabled_payment_types %}{{ type | payment_type_svg_tag: class: \'pf-paymark\' }}{% endfor %}</div>',

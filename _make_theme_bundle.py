@@ -34,6 +34,9 @@ for a, b in [('href="shop.html"', 'href="{{ routes.all_products_collection_url }
 content = content.replace('<span class="bprice">£14.99</span>',
                           "<span class=\"bprice\">{{ collections['all'].products.first.price | money }}</span>")
 
+# ---- mobile sticky bar (lives after </footer> in the mockup, pull it in) ----
+bsticky = t[t.index('<div class="bsticky"'): t.index('</div>\n<script>', t.index('<div class="bsticky"')) + len('</div>')]
+
 # ---- scripts ----
 scripts = re.findall(r"<script>.*?</script>", t, re.S)
 builder = scripts[0]
@@ -67,7 +70,7 @@ def schema(name):
     return ('\n{% schema %}\n{\n  "name": "' + name + '",\n  "settings": [],\n  "presets": [{ "name": "' + name + '" }]\n}\n{% endschema %}\n')
 
 head = "{{ 'pf-bundle.css' | asset_url | stylesheet_tag }}\n"
-(B / "sections/pf-bundle.liquid").write_text(head + content + "\n" + builder + "\n" + sticky + schema("PF Bundle Builder"))
+(B / "sections/pf-bundle.liquid").write_text(head + content + "\n" + bsticky + "\n" + builder + "\n" + sticky + schema("PF Bundle Builder"))
 (B / "templates/page.bundle.json").write_text(json.dumps({
     "sections": {"main": {"type": "pf-bundle", "settings": {}}},
     "order": ["main"]
