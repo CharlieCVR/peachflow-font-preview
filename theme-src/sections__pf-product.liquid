@@ -1,24 +1,15 @@
 {{ 'pf-product.css' | asset_url | stylesheet_tag }}
 <section class="pdp">
   <div class="wrap">
-    <div class="breadcrumb"><a href="{{ routes.root_url }}">Home</a> / <a href="{{ routes.all_products_collection_url }}">Shop All</a> / Watermelons</div>
+    <div class="breadcrumb"><a href="{{ routes.root_url }}">Home</a> / <a href="{{ routes.all_products_collection_url }}">Shop All</a> / {{ product.title | split: ' - ' | first }}</div>
     <div class="pdp-grid">
       <!-- GALLERY -->
       <div class="gallery">
-        <div class="gframe"><img id="galMain" src="{{ product.featured_image | image_url: width: 1100 }}" alt="{{ product.featured_image.alt | escape }}"></div>
+        <div class="gal-main"><div class="gframe"><img id="galMain" src="{{ product.featured_image | image_url: width: 1100 }}" alt="{{ product.featured_image.alt | escape }}"></div></div>
         <div class="gal-thumbs">
           {%- for media in product.media limit: 6 -%}
           <button class="gal-thumb{% if forloop.first %} active{% endif %}" data-src="{{ media | image_url: width: 1100 }}"><img src="{{ media | image_url: width: 200 }}" alt="{{ media.alt | escape }}" loading="lazy"></button>
           {%- endfor -%}
-        </div>
-      </div>
-        <div class="gal-thumbs">
-          <button class="gal-thumb active" data-src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images8.jpg?v=1776886149"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images8.jpg?v=1776886149" alt="Watermelons view 1"></button>
-          <button class="gal-thumb" data-src="assets/references/watermelons.jpg"><img src="assets/references/watermelons.jpg" alt="Watermelons pair, front and grip sole"></button>
-          <button class="gal-thumb" data-src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley5.jpg?v=1772438587"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley5.jpg?v=1772438587" alt="Grip sole detail infographic"></button>
-          <button class="gal-thumb" data-src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley4.jpg?v=1772438587"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley4.jpg?v=1772438587" alt="Fabric and fit infographic"></button>
-          <button class="gal-thumb" data-src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley3.jpg?v=1772438587"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley3.jpg?v=1772438587" alt="Why Peach &amp; Flow infographic"></button>
-          <button class="gal-thumb" data-src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley2.jpg?v=1772438588"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/PeachandFlowInfographicsSmiley2.jpg?v=1772438588" alt="Wash care infographic"></button>
         </div>
       </div>
       <!-- INFO -->
@@ -48,13 +39,11 @@
           <button type="submit" class="atc" id="atc" {% unless product.available %}disabled style="opacity:.55;cursor:not-allowed"{% endunless %}>{% if product.available %}Add to bag &middot; {{ product.price | money }}{% else %}Sold out{% endif %}</button>
         </div>
         {% endform %}
-          <button class="atc" id="atc">Add to bag · £14.99</button>
-        </div>
         <a class="bundle-link" href="#">Or mix &amp; match a bundle, up to 45% off 10+ pairs →</a>
         <div class="trust"><span><span class="dot"></span> Free UK shipping over £25</span><span><span class="dot"></span> Ships within 24 hours</span><span><span class="dot"></span> Easy returns</span></div>
 
         <div class="pdp-acc">
-          <details open><summary>Details</summary><div class="ac">Premium cotton-blend Pilates grip socks with a full-coverage silicone hex-grip sole, arch-support band, and an anti-roll cuff. Cute woven watermelon design. One size fits UK 3–6 / US 5–9.</div></details>
+          <details open><summary>Details</summary><div class="ac">Premium cotton-blend Pilates grip socks with a full-coverage silicone hex-grip sole, arch-support band, and an anti-roll cuff. One size fits UK 3–6 / US 5–9.</div></details>
           <details><summary>Materials &amp; care</summary><div class="ac">Composition: 85% Cotton, 12% Polyester, 3% Spandex, with a silicone hex-grip sole. Machine wash inside out on a cool setting (30°C or below). Avoid the tumble dryer, air dry to keep the grip and shape intact.</div></details>
           <details><summary>Shipping &amp; returns</summary><div class="ac">Free UK shipping over £25, dispatched within 24 hours and delivered in 3–5 working days. Not quite right? Email hello@peachandflow.com and we'll help with your return.</div></details>
         </div>
