@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "pf-page-shipping",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

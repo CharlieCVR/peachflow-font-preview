@@ -26,7 +26,7 @@
     <a href="{{ routes.root_url }}" aria-label="Peach & Flow home" style="display:flex;align-items:center"><svg class="logo-mark" style="height:48px;width:92px;color:var(--terra)"><use href="#pf-logo"/></svg></a>
     <nav class="nav-links">
       <a href="{{ routes.all_products_collection_url }}">Shop All</a>
-      <a href="#">Bundle Builder</a>
+      <a href="/pages/bundle">Bundle Builder</a>
     </nav>
     <div class="nav-actions"><button class="menu-btn" aria-label="Open menu" onclick="document.getElementById('pfdrawer').classList.add('open')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
       <a href="{{ routes.search_url }}">Search</a>
@@ -41,15 +41,15 @@
     <button class="dx" aria-label="Close menu" onclick="document.getElementById('pfdrawer').classList.remove('open')">&times;</button>
     <div class="dh">Shop</div>
     <a href="{{ routes.all_products_collection_url }}">Shop All</a>
-    <a href="#">Bundle Builder</a>
+    <a href="/pages/bundle">Bundle Builder</a>
     <div class="dh">About</div>
-    <a href="#">Our Story</a>
-    <a href="#">Wholesale</a>
+    <a href="/pages/our-story">Our Story</a>
+    <a href="/pages/wholesale">Wholesale</a>
     <div class="dh">Help</div>
-    <a href="#">Shipping</a>
-    <a href="{{ shop.refund_policy.url | default: '#' }}">Returns</a>
-    <a href="#">Size guide</a>
-    <a href="#">Contact</a>
+    <a href="/pages/shipping">Shipping</a>
+    <a href="/pages/returns">Returns</a>
+    <a href="/pages/size-guide">Size guide</a>
+    <a href="/pages/contact">Contact</a>
   </div>
 </div>
 

@@ -30,5 +30,21 @@
  "sections/pf-reviews.liquid": "sections__pf-reviews.liquid",
  "sections/pf-pdp-faq.liquid": "sections__pf-pdp-faq.liquid",
  "sections/pf-xsell.liquid": "sections__pf-xsell.liquid",
- "templates/product.json": "templates__product.json"
+ "templates/product.json": "templates__product.json",
+ "sections/pf-page-our-story.liquid": "sections__pf-page-our-story.liquid",
+ "templates/page.our-story.json": "templates__page.our-story.json",
+ "sections/pf-page-wholesale.liquid": "sections__pf-page-wholesale.liquid",
+ "templates/page.wholesale.json": "templates__page.wholesale.json",
+ "sections/pf-page-shipping.liquid": "sections__pf-page-shipping.liquid",
+ "templates/page.shipping.json": "templates__page.shipping.json",
+ "sections/pf-page-returns.liquid": "sections__pf-page-returns.liquid",
+ "templates/page.returns.json": "templates__page.returns.json",
+ "sections/pf-page-size-guide.liquid": "sections__pf-page-size-guide.liquid",
+ "templates/page.size-guide.json": "templates__page.size-guide.json",
+ "sections/pf-page-contact.liquid": "sections__pf-page-contact.liquid",
+ "templates/page.contact.json": "templates__page.contact.json",
+ "sections/pf-page-privacy-policy.liquid": "sections__pf-page-privacy-policy.liquid",
+ "templates/page.privacy-policy.json": "templates__page.privacy-policy.json",
+ "sections/pf-page-terms-of-service.liquid": "sections__pf-page-terms-of-service.liquid",
+ "templates/page.terms-of-service.json": "templates__page.terms-of-service.json"
 }

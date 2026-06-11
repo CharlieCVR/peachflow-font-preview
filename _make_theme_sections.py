@@ -21,16 +21,17 @@ logo_defs = (B / "snippets/pf-logo-defs.liquid").read_text()
 
 hdr = hdr.replace('<a href="#" aria-label="Peach & Flow home"', '<a href="{{ routes.root_url }}" aria-label="Peach & Flow home"')
 hdr = hdr.replace('<a href="shop.html">Shop All</a>', '<a href="{{ routes.all_products_collection_url }}">Shop All</a>')
-hdr = hdr.replace('<a href="bundle.html">Bundle Builder</a>', '<a href="#">Bundle Builder</a>')
+hdr = hdr.replace('<a href="bundle.html">Bundle Builder</a>', '<a href="/pages/bundle">Bundle Builder</a>')
 hdr = hdr.replace('<a href="#">Search</a>', '<a href="{{ routes.search_url }}">Search</a>')
 hdr = hdr.replace('<a href="#">Account</a>', '<a href="{{ routes.account_url }}">Account</a>')
 hdr = re.sub(r'<span class="bag">Bag <span class="bag-count">\d+</span></span>',
              '<a class="bag" href="{{ routes.cart_url }}">Bag <span class="bag-count">{{ cart.item_count }}</span></a>', hdr)
-for a, b in [('href="shop.html"', 'href="{{ routes.all_products_collection_url }}"'),
-             ('href="bundle.html"', 'href="#"'),
-             ('href="our-story.html"', 'href="#"'), ('href="wholesale.html"', 'href="#"'),
-             ('href="shipping.html"', 'href="#"'), ('href="returns.html"', 'href="{{ shop.refund_policy.url | default: \'#\' }}"'),
-             ('href="size-guide.html"', 'href="#"'), ('href="contact.html"', 'href="#"')]:
+PAGE_LINKS = [('href="shop.html"', 'href="{{ routes.all_products_collection_url }}"'),
+             ('href="bundle.html"', 'href="/pages/bundle"'),
+             ('href="our-story.html"', 'href="/pages/our-story"'), ('href="wholesale.html"', 'href="/pages/wholesale"'),
+             ('href="shipping.html"', 'href="/pages/shipping"'), ('href="returns.html"', 'href="/pages/returns"'),
+             ('href="size-guide.html"', 'href="/pages/size-guide"'), ('href="contact.html"', 'href="/pages/contact"')]
+for a, b in PAGE_LINKS:
     drawer = drawer.replace(a, b)
 (B / "sections/pf-header.liquid").write_text(
     "{% render 'pf-logo-defs' %}\n" + hdr + "\n" + drawer + schema("PF Header"))
@@ -119,13 +120,13 @@ cl = cl.replace('href="bundle.html"', 'href="#"')
 # ---------- footer ----------
 ft = block('<!-- FOOTER -->', '</footer>') + '</footer>'
 for a, b in [('href="shop.html"', 'href="{{ routes.all_products_collection_url }}"'),
-             ('href="bundle.html"', 'href="#"'),
-             ('href="our-story.html"', 'href="#"'), ('href="wholesale.html"', 'href="#"'),
-             ('href="shipping.html"', 'href="#"'),
-             ('href="returns.html"', 'href="{{ shop.refund_policy.url | default: \'#\' }}"'),
-             ('href="size-guide.html"', 'href="#"'), ('href="contact.html"', 'href="#"'),
-             ('<a href="#">Terms of Service</a>', '<a href="{{ shop.terms_of_service.url | default: \'#\' }}">Terms of Service</a>'),
-             ('<a href="#">Privacy Policy</a>', '<a href="{{ shop.privacy_policy.url | default: \'#\' }}">Privacy Policy</a>')]:
+             ('href="bundle.html"', 'href="/pages/bundle"'),
+             ('href="our-story.html"', 'href="/pages/our-story"'), ('href="wholesale.html"', 'href="/pages/wholesale"'),
+             ('href="shipping.html"', 'href="/pages/shipping"'),
+             ('href="returns.html"', 'href="/pages/returns"'),
+             ('href="size-guide.html"', 'href="/pages/size-guide"'), ('href="contact.html"', 'href="/pages/contact"'),
+             ('href="terms-of-service.html"', 'href="/pages/terms-of-service"'),
+             ('href="privacy-policy.html"', 'href="/pages/privacy-policy"')]:
     ft = ft.replace(a, b)
 # native payment icons
 ft = re.sub(r'<div class="paymarks">.*?</div>',
