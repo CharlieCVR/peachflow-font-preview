@@ -23,5 +23,12 @@
  "layout/theme.liquid": "layout__theme.liquid",
  "snippets/pf-product-card.liquid": "snippets__pf-product-card.liquid",
  "sections/pf-collection-page.liquid": "sections__pf-collection-page.liquid",
- "templates/collection.json": "templates__collection.json"
+ "templates/collection.json": "templates__collection.json",
+ "assets/pf-product.css.liquid": "assets__pf-product.css.liquid",
+ "sections/pf-product.liquid": "sections__pf-product.liquid",
+ "sections/pf-pdp-stats.liquid": "sections__pf-pdp-stats.liquid",
+ "sections/pf-reviews.liquid": "sections__pf-reviews.liquid",
+ "sections/pf-pdp-faq.liquid": "sections__pf-pdp-faq.liquid",
+ "sections/pf-xsell.liquid": "sections__pf-xsell.liquid",
+ "templates/product.json": "templates__product.json"
 }

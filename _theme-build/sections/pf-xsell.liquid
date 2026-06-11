@@ -1,0 +1,23 @@
+<!-- CROSS-SELL -->
+<section class="xsell">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">More to love</span><h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-top:10px">Complete your collection</h2></div><a class="sec-link" href="{{ routes.all_products_collection_url }}">View all socks →</a></div>
+    <div class="xgrid">
+      
+{%- assign shown = 0 -%}
+{%- for p in collections['all'].products -%}
+  {%- if p.id == product.id or shown >= 4 -%}{%- continue -%}{%- endif -%}
+  {% render 'pf-product-card', card_product: p %}
+  {%- assign shown = shown | plus: 1 -%}
+{%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "PF Cross Sell",
+  "settings": [],
+  "presets": [{ "name": "PF Cross Sell" }]
+}
+{% endschema %}

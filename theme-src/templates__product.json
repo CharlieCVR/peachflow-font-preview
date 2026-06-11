@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "pf_product": {
+      "type": "pf-product",
+      "settings": {}
+    },
+    "pf_stats": {
+      "type": "pf-pdp-stats",
+      "settings": {}
+    },
+    "pf_reviews": {
+      "type": "pf-reviews",
+      "settings": {}
+    },
+    "pf_faq": {
+      "type": "pf-pdp-faq",
+      "settings": {}
+    },
+    "pf_xsell": {
+      "type": "pf-xsell",
+      "settings": {}
+    },
+    "pf_instagram": {
+      "type": "pf-instagram",
+      "settings": {}
+    }
+  },
+  "order": [
+    "pf_product",
+    "pf_stats",
+    "pf_reviews",
+    "pf_faq",
+    "pf_xsell",
+    "pf_instagram"
+  ]
+}
