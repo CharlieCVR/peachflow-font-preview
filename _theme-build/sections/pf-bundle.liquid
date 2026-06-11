@@ -1,0 +1,200 @@
+{{ 'pf-bundle.css' | asset_url | stylesheet_tag }}
+<section class="bundle-head">
+  <div class="wrap">
+    <span class="eyebrow">Build &amp; Save</span>
+    <h1>Bundle Builder</h1>
+    <p>Mix &amp; match your favourite designs, the more pairs you add, the more you save. Up to 45% off.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="ladder">
+      <div class="step" data-q="2">
+        <span class="pack">2+ Pack</span>
+        <div class="pill"><span class="pct">15</span><span class="pctsym"><i>%</i><b>OFF</b></span></div>
+        <span class="ppp">£12.74/pair · free UK shipping</span>
+      </div>
+      <div class="dots"></div>
+      <div class="step" data-q="4">
+        <span class="pack">4+ Pack</span>
+        <div class="pill"><span class="pct">25</span><span class="pctsym"><i>%</i><b>OFF</b></span></div>
+        <span class="lbadge pop">Most Popular</span><span class="ppp">£11.24/pair</span>
+      </div>
+      <div class="dots"></div>
+      <div class="step" data-q="6">
+        <span class="pack">6+ Pack</span>
+        <div class="pill"><span class="pct">35</span><span class="pctsym"><i>%</i><b>OFF</b></span></div>
+        <span class="ppp">£9.74/pair</span>
+      </div>
+      <div class="dots"></div>
+      <div class="step" data-q="8">
+        <span class="pack">8+ Pack</span>
+        <div class="pill"><span class="pct">40</span><span class="pctsym"><i>%</i><b>OFF</b></span></div>
+        <span class="ppp">£8.99/pair</span>
+      </div>
+      <div class="dots"></div>
+      <div class="step best" data-q="10">
+        <span class="pack">10+ Pack</span>
+        <div class="pill"><span class="pct">45</span><span class="pctsym"><i>%</i><b>OFF</b></span></div>
+        <span class="lbadge best">Best Value</span><span class="ppp">£8.24/pair</span>
+      </div>
+  </div>
+  <div class="ladder-msg" id="lmsg">Add 2 pairs to unlock 15% off, mix &amp; match any designs.</div>
+
+  <div class="bundle-layout">
+    <div class="bprod-grid">
+      <div class="bcard" data-id="matcha" data-name="Less Drama More Matcha">
+        <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images3.jpg?v=1776886148" alt="Less Drama More Matcha" loading="lazy"></div></div>
+        <div class="bcard-info"><h3>Less Drama More Matcha</h3><span class="bprice">{{ collections['all'].products.first.price | money }}</span></div>
+        <button class="add-btn" data-act="add">Add to bundle</button>
+        <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
+      </div>
+      <div class="bcard" data-id="eggs" data-name="Eggs">
+        <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images1_0f90c808-0095-458e-8839-7379ba292f5b.jpg?v=1776886147" alt="Eggs" loading="lazy"></div></div>
+        <div class="bcard-info"><h3>Eggs</h3><span class="bprice">{{ collections['all'].products.first.price | money }}</span></div>
+        <button class="add-btn" data-act="add">Add to bundle</button>
+        <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
+      </div>
+      <div class="bcard" data-id="watermelons" data-name="Watermelons">
+        <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images8.jpg?v=1776886149" alt="Watermelons" loading="lazy"></div></div>
+        <div class="bcard-info"><h3>Watermelons</h3><span class="bprice">{{ collections['all'].products.first.price | money }}</span></div>
+        <button class="add-btn" data-act="add">Add to bundle</button>
+        <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
+      </div>
+      <div class="bcard" data-id="peaches" data-name="Peaches">
+        <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images4.jpg?v=1776886147" alt="Peaches" loading="lazy"></div></div>
+        <div class="bcard-info"><h3>Peaches</h3><span class="bprice">{{ collections['all'].products.first.price | money }}</span></div>
+        <button class="add-btn" data-act="add">Add to bundle</button>
+        <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
+      </div>
+      <div class="bcard" data-id="flowers" data-name="Flowers">
+        <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images5.jpg?v=1776886147" alt="Flowers" loading="lazy"></div></div>
+        <div class="bcard-info"><h3>Flowers</h3><span class="bprice">{{ collections['all'].products.first.price | money }}</span></div>
+        <button class="add-btn" data-act="add">Add to bundle</button>
+        <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
+      </div>
+      <div class="bcard" data-id="chilis" data-name="Chilis">
+        <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images7.jpg?v=1776886147" alt="Chilis" loading="lazy"></div></div>
+        <div class="bcard-info"><h3>Chilis</h3><span class="bprice">{{ collections['all'].products.first.price | money }}</span></div>
+        <button class="add-btn" data-act="add">Add to bundle</button>
+        <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
+      </div>
+      <div class="bcard" data-id="hottie" data-name="You’re a Hottie">
+        <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images6.jpg?v=1776886147" alt="You’re a Hottie" loading="lazy"></div></div>
+        <div class="bcard-info"><h3>You’re a Hottie</h3><span class="bprice">{{ collections['all'].products.first.price | money }}</span></div>
+        <button class="add-btn" data-act="add">Add to bundle</button>
+        <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
+      </div>
+      <div class="bcard" data-id="smiley" data-name="Smiley Faces">
+        <div class="bcard-img"><div class="ph"><img src="https://cdn.shopify.com/s/files/1/0989/7132/0646/files/Peach_Flow_Hero_Images2.jpg?v=1776886147" alt="Smiley Faces" loading="lazy"></div></div>
+        <div class="bcard-info"><h3>Smiley Faces</h3><span class="bprice">{{ collections['all'].products.first.price | money }}</span></div>
+        <button class="add-btn" data-act="add">Add to bundle</button>
+        <div class="stepper" data-stepper hidden><button data-act="dec" aria-label="Remove one">−</button><span class="qty">0</span><button data-act="inc" aria-label="Add one">+</button></div>
+      </div>
+    </div>
+
+    <aside class="summary">
+      <h2>Your Bundle (<span id="sumCount">0</span>)</h2>
+      <div class="sub">Discount applies automatically</div>
+      <div class="sum-items" id="sumItems"></div>
+      <div class="sum-div"></div>
+      <div class="sum-row"><span>Subtotal</span><span id="rowSub">£0.00</span></div>
+      <div class="sum-row disc" id="rowDisc" style="display:none"><span id="discLabel">Bundle discount</span><span id="discVal">−£0.00</span></div>
+      <div class="sum-row total"><span>Total</span><span id="rowTotal">£0.00</span></div>
+      <span class="savepill" id="savePill" style="display:none"></span>
+      <div class="shipline" id="shipLine" style="display:none"></div>
+      <button class="checkout-btn" id="checkout" disabled>Add a pair to start</button>
+      <div class="powered">Bundle pricing powered by Bundle Deals · applied at checkout</div>
+    </aside>
+  </div>
+</div>
+<script>
+(function(){
+  var VARIANTS={"matcha": 56082710298950, "eggs": 56082686345542, "watermelons": 56082690015558, "peaches": 56082701549894, "flowers": 56082694340934, "chilis": 56082699288902, "hottie": 56082702565702, "smiley": 56082705154374};
+  var PRICE={{ collections['all'].products.first.price | default: 1399 | divided_by: 100.0 }};
+  var TIERS=[{q:2,pct:15},{q:4,pct:25},{q:6,pct:35},{q:8,pct:40},{q:10,pct:45}]; // 2+/20  4+/27  6+/33  8+/45
+  var bundle={}; var names={}, imgs={};
+  document.querySelectorAll('.bcard').forEach(function(c){names[c.dataset.id]=c.dataset.name; imgs[c.dataset.id]=c.querySelector('img').src;});
+  function totalQty(){var n=0;for(var k in bundle)n+=bundle[k];return n;}
+  function pctFor(q){var p=0;TIERS.forEach(function(t){if(q>=t.q)p=t.pct});return p;}
+  function next(q){return TIERS.find(function(t){return q<t.q;});}
+  function money(n){return '£'+n.toFixed(2);}
+  function render(){
+    var q=totalQty(), sub=q*PRICE, pct=pctFor(q), disc=sub*pct/100, tot=sub-disc;
+    document.querySelectorAll('.bcard').forEach(function(c){
+      var id=c.dataset.id, n=bundle[id]||0;
+      var add=c.querySelector('.add-btn'), st=c.querySelector('[data-stepper]');
+      if(n>0){add.hidden=true; st.hidden=false; st.querySelector('.qty').textContent=n; c.classList.add('in');}
+      else{add.hidden=false; st.hidden=true; c.classList.remove('in');}
+    });
+    document.querySelectorAll('.ladder .step').forEach(function(s){s.classList.toggle('reached', q>=parseInt(s.dataset.q));});
+    var msg=document.getElementById('lmsg'), nt=next(q);
+    if(q===0) msg.textContent='Add 2 pairs to unlock 15% off, mix & match any designs.';
+    else if(nt) msg.textContent='Add '+(nt.q-q)+' more pair'+((nt.q-q)>1?'s':'')+' to save '+nt.pct+'%.';
+    else msg.textContent="You're saving "+pct+"%, that's the best value! 🍑";
+    var list=document.getElementById('sumItems'); list.innerHTML='';
+    if(q===0){ list.innerHTML='<div class="sum-empty">Your bundle is empty, pick your first pair to start.</div>'; }
+    else{ Object.keys(bundle).forEach(function(id){var n=bundle[id]; if(!n)return;
+      var el=document.createElement('div'); el.className='sum-item';
+      el.innerHTML='<img src="'+imgs[id]+'"><div class="nm">'+names[id]+'<small>Qty '+n+' · '+money(n*PRICE)+'</small></div><button class="rm" data-rm="'+id+'">Remove</button>';
+      list.appendChild(el);}); }
+    document.getElementById('sumCount').textContent=q;
+    document.getElementById('rowSub').textContent=money(sub);
+    document.getElementById('rowDisc').style.display = pct>0?'flex':'none';
+    document.getElementById('discLabel').textContent='Bundle discount ('+pct+'% off)';
+    document.getElementById('discVal').textContent='−'+money(disc);
+    document.getElementById('rowTotal').textContent=money(tot);
+    var sp=document.getElementById('savePill');
+    if(disc>0){sp.style.display='inline-block'; sp.textContent="You save "+money(disc);} else sp.style.display='none';
+    var btn=document.getElementById('checkout');
+    btn.disabled = q<1;
+    btn.textContent = q<1 ? 'Add a pair to start' : 'Add bundle to cart · '+money(tot);
+    document.querySelector('.bag-count').textContent=q;
+  }
+  document.querySelector('.bprod-grid').addEventListener('click',function(e){
+    var b=e.target.closest('[data-act]'); if(!b)return;
+    var card=e.target.closest('.bcard'); var id=card.dataset.id, act=b.dataset.act;
+    bundle[id]=bundle[id]||0;
+    if(act==='add'||act==='inc') bundle[id]++;
+    if(act==='dec'){ bundle[id]--; if(bundle[id]<=0) delete bundle[id]; }
+    render();
+  });
+  document.getElementById('sumItems').addEventListener('click',function(e){
+    var r=e.target.closest('[data-rm]'); if(!r)return; delete bundle[r.dataset.rm]; render();
+  });
+  document.getElementById('checkout').addEventListener('click',function(){
+    var items=[]; for(var k in bundle){ if(bundle[k]>0 && VARIANTS[k]) items.push({id:VARIANTS[k], quantity:bundle[k]}); }
+    if(!items.length) return;
+    var btn=this; btn.disabled=true; var label=btn.textContent; btn.textContent='Adding…';
+    fetch('{{ routes.cart_add_url }}.js',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:items})})
+      .then(function(r){ if(!r.ok) throw new Error('add'); window.location='{{ routes.cart_url }}'; })
+      .catch(function(){ btn.disabled=false; btn.textContent='Could not add, try again'; setTimeout(function(){btn.textContent=label;},1800); });
+  });
+  render();
+})();
+</script>
+<script>
+(function(){
+  var rowTotal=document.getElementById('rowTotal'), sumCount=document.getElementById('sumCount'),
+      lmsg=document.getElementById('lmsg'), ship=document.getElementById('shipLine'),
+      bsM=document.getElementById('bsMsg');
+  function upd(){
+    var tot=parseFloat((rowTotal.textContent||'').replace(/[^0-9.]/g,''))||0;
+    var q=parseInt(sumCount.textContent)||0;
+    document.getElementById('bsLine').textContent=q+' '+(q===1?'pair':'pairs')+' · '+rowTotal.textContent; bsM.textContent=lmsg.textContent;
+    if(q===0){ship.style.display='none';}
+    else if(tot>=25){ship.style.display='block';ship.className='shipline ok';ship.textContent='✓ Free UK shipping unlocked';}
+    else{ship.style.display='block';ship.className='shipline';ship.textContent='You are £'+(25-tot).toFixed(2)+' from free UK shipping';}
+  }
+  new MutationObserver(upd).observe(rowTotal,{childList:true,characterData:true,subtree:true});
+  new MutationObserver(upd).observe(lmsg,{childList:true,characterData:true,subtree:true});
+  upd();
+})();
+</script>
+{% schema %}
+{
+  "name": "PF Bundle Builder",
+  "settings": [],
+  "presets": [{ "name": "PF Bundle Builder" }]
+}
+{% endschema %}

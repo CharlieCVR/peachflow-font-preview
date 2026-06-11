@@ -46,5 +46,8 @@
  "sections/pf-page-privacy-policy.liquid": "sections__pf-page-privacy-policy.liquid",
  "templates/page.privacy-policy.json": "templates__page.privacy-policy.json",
  "sections/pf-page-terms-of-service.liquid": "sections__pf-page-terms-of-service.liquid",
- "templates/page.terms-of-service.json": "templates__page.terms-of-service.json"
+ "templates/page.terms-of-service.json": "templates__page.terms-of-service.json",
+ "assets/pf-bundle.css.liquid": "assets__pf-bundle.css.liquid",
+ "sections/pf-bundle.liquid": "sections__pf-bundle.liquid",
+ "templates/page.bundle.json": "templates__page.bundle.json"
 }
