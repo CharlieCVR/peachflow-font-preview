@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "pf_collection_page": {
+      "type": "pf-collection-page",
+      "settings": {}
+    }
+  },
+  "order": ["pf_collection_page"]
+}

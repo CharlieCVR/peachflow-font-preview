@@ -1,0 +1,25 @@
+<section class="section" style="padding-top:56px">
+  <div class="wrap">
+    <div style="max-width:640px;margin-bottom:44px">
+      <span class="eyebrow">The Collection</span>
+      <h1 style="font-size:clamp(2.5rem,5.5vw,4.3rem);font-weight:800;letter-spacing:-.035em;line-height:1.0;margin:14px 0 18px">{{ section.settings.heading | default: collection.title }}</h1>
+      <p style="font-size:1.1rem;color:var(--muted);line-height:1.6;max-width:480px">{{ section.settings.intro }}</p>
+    </div>
+    {% paginate collection.products by 24 %}
+    <div class="grid">
+      {%- for product in collection.products -%}
+        {% render 'pf-product-card', card_product: product %}
+      {%- endfor -%}
+    </div>
+    {% endpaginate %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "PF Collection Page",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Shop All" },
+    { "type": "textarea", "id": "intro", "label": "Intro text", "default": "Cute grip socks for every flow, find the pair that's you. One price, eight designs, serious grip." }
+  ]
+}
+{% endschema %}

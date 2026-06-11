@@ -1,0 +1,11 @@
+<a class="card" href="{{ card_product.url }}">
+  <div class="card-img">
+    {%- if card_product.available == false -%}<span class="badge out">Sold out</span>
+    {%- elsif card_product.tags contains 'bestseller' -%}<span class="badge terra">Bestseller</span>
+    {%- elsif card_product.tags contains 'low-stock' -%}<span class="badge">Low stock</span>
+    {%- else -%}<span class="badge">In stock</span>{%- endif -%}
+    <div class="ph">{{ card_product.featured_image | image_url: width: 600 | image_tag: alt: card_product.title, loading: 'lazy' }}</div>
+    <div class="quick">{% if card_product.available %}+ Add to bag{% else %}Notify me{% endif %}</div>
+  </div>
+  <div class="card-body"><h3>{{ card_product.title | split: ' - ' | first }}</h3><div class="card-meta"><span class="price">{{ card_product.price | money }}</span><span>&#9733; 4.9</span></div></div>
+</a>

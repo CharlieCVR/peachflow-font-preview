@@ -20,5 +20,8 @@
  "assets/peachflow.css.liquid": "assets__peachflow.css.liquid",
  "assets/pf-nm-extrabold.woff2": "assets__pf-nm-extrabold.woff2",
  "assets/pf-nm-bold.woff2": "assets__pf-nm-bold.woff2",
- "layout/theme.liquid": "layout__theme.liquid"
+ "layout/theme.liquid": "layout__theme.liquid",
+ "snippets/pf-product-card.liquid": "snippets__pf-product-card.liquid",
+ "sections/pf-collection-page.liquid": "sections__pf-collection-page.liquid",
+ "templates/collection.json": "templates__collection.json"
 }

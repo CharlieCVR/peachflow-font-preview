@@ -1,0 +1,51 @@
+{
+  "sections": {
+    "pf_hero": {
+      "type": "pf-hero",
+      "settings": {}
+    },
+    "pf_marquee": {
+      "type": "pf-marquee",
+      "settings": {}
+    },
+    "pf_collection": {
+      "type": "pf-collection",
+      "settings": {}
+    },
+    "pf_bundle_teaser": {
+      "type": "pf-bundle-teaser",
+      "settings": {}
+    },
+    "pf_comparison": {
+      "type": "pf-comparison",
+      "settings": {}
+    },
+    "pf_testimonials": {
+      "type": "pf-testimonials",
+      "settings": {}
+    },
+    "pf_instagram": {
+      "type": "pf-instagram",
+      "settings": {}
+    },
+    "pf_faq": {
+      "type": "pf-faq",
+      "settings": {}
+    },
+    "pf_closing": {
+      "type": "pf-closing",
+      "settings": {}
+    }
+  },
+  "order": [
+    "pf_hero",
+    "pf_marquee",
+    "pf_collection",
+    "pf_bundle_teaser",
+    "pf_comparison",
+    "pf_testimonials",
+    "pf_instagram",
+    "pf_faq",
+    "pf_closing"
+  ]
+}
