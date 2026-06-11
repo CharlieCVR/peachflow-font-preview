@@ -115,7 +115,7 @@
 <script>
 (function(){
   var VARIANTS={"matcha": 56082710298950, "eggs": 56082686345542, "watermelons": 56082690015558, "peaches": 56082701549894, "flowers": 56082694340934, "chilis": 56082699288902, "hottie": 56082702565702, "smiley": 56082705154374};
-  var PRICE={{ collections['all'].products.first.price | default: 1399 | divided_by: 100.0 }};
+  var PRICE={{ collections['all'].products.first.price | default: 1499 | divided_by: 100.0 }};
   var TIERS=[{q:2,pct:15},{q:4,pct:25},{q:6,pct:35},{q:8,pct:40},{q:10,pct:45}]; // 2+/20  4+/27  6+/33  8+/45
   var bundle={}; var names={}, imgs={};
   document.querySelectorAll('.bcard').forEach(function(c){names[c.dataset.id]=c.dataset.name; imgs[c.dataset.id]=c.querySelector('img').src;});
@@ -124,7 +124,7 @@
   function next(q){return TIERS.find(function(t){return q<t.q;});}
   function money(n){return '£'+n.toFixed(2);}
   function render(){
-    var q=totalQty(), sub=q*PRICE, pct=pctFor(q), disc=sub*pct/100, tot=sub-disc;
+    var q=totalQty(), sub=q*PRICE, pct=pctFor(q), disc=Math.floor(sub*100*pct/100)/100, tot=sub-disc;
     document.querySelectorAll('.bcard').forEach(function(c){
       var id=c.dataset.id, n=bundle[id]||0;
       var add=c.querySelector('.add-btn'), st=c.querySelector('[data-stepper]');

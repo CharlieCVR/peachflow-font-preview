@@ -49,5 +49,8 @@
  "templates/page.terms-of-service.json": "templates__page.terms-of-service.json",
  "assets/pf-bundle.css.liquid": "assets__pf-bundle.css.liquid",
  "sections/pf-bundle.liquid": "sections__pf-bundle.liquid",
- "templates/page.bundle.json": "templates__page.bundle.json"
+ "templates/page.bundle.json": "templates__page.bundle.json",
+ "assets/pf-cart.css.liquid": "assets__pf-cart.css.liquid",
+ "sections/pf-cart-page.liquid": "sections__pf-cart-page.liquid",
+ "templates/cart.json": "templates__cart.json"
 }

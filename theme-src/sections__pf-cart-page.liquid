@@ -1,0 +1,92 @@
+{{ 'pf-cart.css' | asset_url | stylesheet_tag }}
+<section class="pfcart">
+  <div class="wrap">
+    {%- if cart.item_count == 0 -%}
+    <div class="pfc-empty">
+      <h1>Your bag is empty</h1>
+      <p class="sub">Pick your first pair and the bundle savings start at 2.</p>
+      <a class="btn" href="{{ routes.all_products_collection_url }}" style="margin-top:18px">Shop the collection</a>
+    </div>
+    {%- else -%}
+    <h1>Your bag ({{ cart.item_count }})</h1>
+    <p class="sub">Bundle discounts apply automatically, the more pairs you add the more you save.</p>
+    <form action="{{ routes.cart_url }}" method="post" novalidate>
+      <div class="pfc-grid">
+        <div class="pfc-items">
+          {%- for item in cart.items -%}
+          <div class="pfc-item">
+            <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title | escape }}" loading="lazy">
+            <div class="nm">
+              <b>{{ item.product.title | split: ' - ' | first }}</b>
+              <small>Pilates Grip Socks &middot; {{ item.price | money }} each</small>
+              <a class="rm" href="{{ item.url_to_remove }}">Remove</a>
+            </div>
+            <div class="pfc-right">
+              <div class="pfc-price">
+                {%- if item.original_line_price > item.final_line_price -%}
+                <span class="was">{{ item.original_line_price | money }}</span><b>{{ item.final_line_price | money }}</b>
+                {%- else -%}<b>{{ item.original_line_price | money }}</b>{%- endif -%}
+              </div>
+              <div class="pfc-qty">
+                <button type="button" data-step="-1" aria-label="Decrease">&minus;</button>
+                <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" aria-label="Quantity">
+                <button type="button" data-step="1" aria-label="Increase">+</button>
+              </div>
+            </div>
+          </div>
+          {%- endfor -%}
+        </div>
+        <aside class="pfc-sum">
+          <h2>Order summary</h2>
+          <div class="pfc-row"><span>Subtotal</span><span>{{ cart.original_total_price | money }}</span></div>
+          {%- if cart.total_discount > 0 -%}
+          {%- assign pct = cart.total_discount | times: 100.0 | divided_by: cart.original_total_price | round -%}
+          <div class="pfc-row disc"><span>Bundle discount ({{ pct }}% off)</span><span>&minus;{{ cart.total_discount | money }}</span></div>
+          {%- endif -%}
+          <div class="pfc-row total"><span>Total</span><span>{{ cart.total_price | money }}</span></div>
+          {%- if cart.total_discount > 0 -%}<span class="pfc-pill">You save {{ cart.total_discount | money }}</span>{%- endif -%}
+          {%- assign away = 2500 | minus: cart.total_price -%}
+          {%- if away > 0 -%}
+          <div class="pfc-ship">{{ away | money }} away from free UK shipping</div>
+          {%- assign w = cart.total_price | times: 100 | divided_by: 2500 -%}
+          <div class="pfc-bar"><i style="width:{{ w | at_most: 100 }}%"></i></div>
+          {%- else -%}
+          <div class="pfc-ship ok">&#10003; Free UK shipping unlocked</div>
+          <div class="pfc-bar"><i style="width:100%"></i></div>
+          {%- endif -%}
+          {%- assign q = cart.item_count -%}
+          {%- if q < 2 -%}<div class="pfc-nudge">Add {{ 2 | minus: q }} more pair to save 15%</div>
+          {%- elsif q < 4 -%}{%- assign need = 4 | minus: q -%}<div class="pfc-nudge">Add {{ need }} more {% if need == 1 %}pair{% else %}pairs{% endif %} to save 25%</div>
+          {%- elsif q < 6 -%}<div class="pfc-nudge">Add {{ 6 | minus: q }} more to save 35%</div>
+          {%- elsif q < 8 -%}<div class="pfc-nudge">Add {{ 8 | minus: q }} more to save 40%</div>
+          {%- elsif q < 10 -%}<div class="pfc-nudge">Add {{ 10 | minus: q }} more to save 45%</div>
+          {%- else -%}<div class="pfc-nudge">You're saving 45%, that's the best value! &#127825;</div>
+          {%- endif -%}
+          <button class="pfc-checkout" type="submit" name="checkout">Checkout &middot; {{ cart.total_price | money }}</button>
+          <a class="pfc-bundle" href="/pages/bundle">Or build a bundle &rarr;</a>
+          <div class="pfc-note">Free UK shipping over &pound;25 &middot; Ships within 24 hours &middot; Easy returns</div>
+        </aside>
+      </div>
+    </form>
+    {%- endif -%}
+  </div>
+</section>
+<script>
+(function(){
+  document.querySelectorAll('.pfc-qty button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var inp=b.parentElement.querySelector('input');
+      var v=Math.max(0, parseInt(inp.value||'0') + parseInt(b.dataset.step));
+      inp.value=v;
+      b.closest('form').submit();
+    });
+  });
+})();
+</script>
+{% schema %}
+{
+  "name": "PF Cart",
+  "settings": [],
+  "presets": [{ "name": "PF Cart" }]
+}
+{% endschema %}

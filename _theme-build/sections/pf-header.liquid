@@ -55,6 +55,52 @@
 
 
 
+
+<div class="cartdrawer" id="pfcart">
+  <div class="ov" onclick="pfCartClose()"></div>
+  <div class="panel">
+    <div id="pfcAdd" style="display:none">
+      <h3>Added to bag &#10003; <button class="cx" aria-label="Close" onclick="pfCartClose()">&times;</button></h3>
+      <div class="cd-item"><img id="cdImg" src="" alt=""><div class="nm"><b id="cdName"></b><small id="cdQty"></small></div><b id="cdPrice"></b></div>
+      <div class="cd-ship" id="cdShip"></div>
+      <div class="cd-bar"><i id="cdBar" style="width:0%"></i></div>
+      <div class="cd-nudge" id="cdNudge"></div>
+      <div class="cd-actions">
+        <button class="cd-checkout" onclick="window.location='{{ routes.cart_url }}/checkout' ">Checkout</button>
+        <a class="btn" href="{{ routes.cart_url }}">View bag</a>
+        <button class="cd-keep" onclick="pfCartClose()">Keep shopping</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var TIERS=[[2,15],[4,25],[6,35],[8,40],[10,45]];
+  function tier(q){var p=0;TIERS.forEach(function(x){if(q>=x[0])p=x[1];});return p;}
+  function next(q){for(var i=0;i<TIERS.length;i++){if(q<TIERS[i][0])return TIERS[i];}return null;}
+  function money(n){return '\u00a3'+(n/100).toFixed(2);}
+  window.pfCartClose=function(){document.getElementById('pfcart').classList.remove('open');};
+  window.pfCartOpen=function(name,img){
+    fetch('{{ routes.cart_url }}.js').then(function(r){return r.json();}).then(function(c){
+      var q=c.item_count, pct=tier(q);
+      document.getElementById('pfcAdd').style.display='block';
+      document.getElementById('cdImg').src=img||((c.items[0]||{}).image)||'';
+      document.getElementById('cdName').textContent=name||((c.items[0]||{}).product_title)||'Your bag';
+      document.getElementById('cdQty').textContent=q+(q===1?' pair':' pairs')+' in your bag'+(pct?' \u00b7 '+pct+'% bundle discount applied':'');
+      document.getElementById('cdPrice').textContent=money(c.total_price);
+      var away=2500-c.total_price;
+      document.getElementById('cdShip').textContent= away>0 ? (money(away)+' away from free UK shipping') : '\u2713 Free UK shipping unlocked';
+      document.getElementById('cdBar').style.width=Math.min(100,c.total_price/2500*100)+'%';
+      var nt=next(q), ndg=document.getElementById('cdNudge');
+      if(nt) ndg.textContent='Add '+(nt[0]-q)+' more pair'+((nt[0]-q)>1?'s':'')+' to save '+nt[1]+'%';
+      else ndg.textContent="You're saving "+pct+"%, that's the best value! \ud83c\udf51";
+      document.querySelectorAll('.bag-count').forEach(function(b){b.textContent=q;});
+      document.getElementById('pfcart').classList.add('open');
+    });
+  };
+})();
+</script>
+
 {% schema %}
 {
   "name": "PF Header",
